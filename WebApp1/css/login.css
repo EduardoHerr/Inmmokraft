@@ -1,0 +1,63 @@
+﻿body {
+    background: rgb(1,38,131);
+    background: radial-gradient(circle, rgba(1,38,131,1) 0%, rgba(1,38,131,1) 47%);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 96vh;
+}
+
+.log {
+    border-radius: 50px;
+    background: #1b47b6;
+    box-shadow: inset 20px 20px 60px #173c9b, inset -20px -20px 60px #1f52d1;
+    padding: 4% 5%;
+    color: white;
+}
+
+.sub {
+    background: rgba( 3, 83, 248, 0.55 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 2% 4%;
+    border-radius: 10px;
+    border-style: none;
+    font-weight: bold;
+    color: white;
+}
+
+    .sub:hover {
+        color: black;
+    }
+
+.inp {
+    color: white;
+    padding: 2% 4%;
+    border-radius: 15px;
+    border-style: none;
+    background: rgba( 17, 17, 17, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.lnk {
+    text-decoration: none;
+    color: white;
+}
+
+.lnk:hover{
+    color:black;
+}
+
+#lblMensaje{
+    font-weight:bold;
+}

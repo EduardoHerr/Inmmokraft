@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Inmmokraft" Class="DataBaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=Inmmokraft.mssql.somee.com;Initial Catalog=Inmmokraft;Persist Security Info=True;User ID=Barbas_SQLLogin_1" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="InmmokraftConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblDatos" Member="tblDatos">
+    <Type Name="tblDatos">
+      <Column Name="idDato" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPagina" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="datPerfil" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="datPropiedad" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="datTipo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="datArte" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="datTituloArte" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="datFechaHoraPub" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="datSitio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="datGrupoPost" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="datContInteresado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="datCantInteresado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="datContramensaje" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="datCantRecibidos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="datLlamadaFinal" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="datCita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="datEstado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="tblUsuario_tblDatos" Member="tblUsuario" ThisKey="idUsuario" OtherKey="idUsuario" Type="tblUsuario" IsForeignKey="true" />
+      <Association Name="tblGrupos_tblDatos" Member="tblGrupos" ThisKey="idGrupo" OtherKey="idGrupo" Type="tblGrupos" IsForeignKey="true" />
+      <Association Name="tblPagina_tblDatos" Member="tblPagina" ThisKey="idPagina" OtherKey="idPagina" Type="tblPagina" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUsuario" Member="tblUsuario">
+    <Type Name="tblUsuario">
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idTipUsu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="usNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usCedula" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usClave" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usCorreo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usDireccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usEstado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="tblUsuario_tblDatos" Member="tblDatos" ThisKey="idUsuario" OtherKey="idUsuario" Type="tblDatos" />
+      <Association Name="tblTipoUsuario_tblUsuario" Member="tblTipoUsuario" ThisKey="idTipUsu" OtherKey="idTipUsu" Type="tblTipoUsuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblGrupos" Member="tblGrupos">
+    <Type Name="tblGrupos">
+      <Column Name="idGrupo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idPagina" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="grupNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="grupAcceso" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="grupEstado" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="tblGrupos_tblDatos" Member="tblDatos" ThisKey="idGrupo" OtherKey="idGrupo" Type="tblDatos" />
+      <Association Name="tblPagina_tblGrupos" Member="tblPagina" ThisKey="idPagina" OtherKey="idPagina" Type="tblPagina" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPagina" Member="tblPagina">
+    <Type Name="tblPagina">
+      <Column Name="idPagina" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sitNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="sitAutor" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="tblPagina_tblDatos" Member="tblDatos" ThisKey="idPagina" OtherKey="idPagina" Type="tblDatos" />
+      <Association Name="tblPagina_tblGrupos" Member="tblGrupos" ThisKey="idPagina" OtherKey="idPagina" Type="tblGrupos" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTipoUsuario" Member="tblTipoUsuario">
+    <Type Name="tblTipoUsuario">
+      <Column Name="idTipUsu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tusuRol" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tusuEstado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="tblTipoUsuario_tblUsuario" Member="tblUsuario" ThisKey="idTipUsu" OtherKey="idTipUsu" Type="tblUsuario" />
+    </Type>
+  </Table>
+</Database>

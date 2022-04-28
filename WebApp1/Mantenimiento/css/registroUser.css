@@ -1,0 +1,33 @@
+﻿.padre {
+    width: 50%;
+    background-color: red;
+    margin: 10px 27%;
+    
+    border-radius: 50px;
+    background: #d4d6d8;
+    box-shadow: 20px 20px 60px #b4b6b8, -20px -20px 60px #f4f6f8;
+    padding: 15px;
+}
+body {
+    background-color: #E5E7E9;
+}
+
+.col-md-11{
+    padding:1px;
+    margin-left: 15px;
+}
+
+.tabla{
+    margin:15px;
+}
+
+.btnNuevo{
+    margin-left:20px;
+}
+.Titulo{
+    font-size: 25px;
+}
+
+.form-control{
+    height:25px;
+}

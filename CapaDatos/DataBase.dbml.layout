@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataBase">
+  <DataContextMoniker Name="/DataBaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e2dd7e4e-da2e-46c3-9c88-24cd731163c9" absoluteBounds="6.25, 2.75, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/DataBaseDataContext/tblDatos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="441c3848-6b98-48eb-8d4f-da02d12212ee" absoluteBounds="6.265, 3.21, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c9edf9f5-c3ac-4899-96dd-ce7c5c0017e1" absoluteBounds="3.5, 0.75, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/DataBaseDataContext/tblUsuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="47051f40-24e6-4dfd-8428-3a4d4c3459a2" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6b57846b-2d16-48ff-9fc2-245d0c071699" absoluteBounds="3.5, 4.125, 2, 1.7708968098958326">
+      <DataClassMoniker Name="/DataBaseDataContext/tblGrupos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2d00e500-75fe-497d-88a5-9242b07a12ff" absoluteBounds="3.515, 4.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5df9fd17-e6c6-47cf-93b2-0605beb7bf4f" absoluteBounds="0.75, 4.375, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DataBaseDataContext/tblPagina" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a5273c3a-6906-418e-b3d8-9cd713779667" absoluteBounds="0.765, 4.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="329298b9-4063-44a2-844f-b589d08cd97e" absoluteBounds="0.75, 1.375, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DataBaseDataContext/tblTipoUsuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ce89d5f7-93a5-4294-8990-3bb02035e6b3" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 3.02005126953125); (6.25 : 3.02005126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataBaseDataContext/tblUsuario/tblUsuario_tblDatos" />
+      <nodes>
+        <classShapeMoniker Id="c9edf9f5-c3ac-4899-96dd-ce7c5c0017e1" />
+        <classShapeMoniker Id="e2dd7e4e-da2e-46c3-9c88-24cd731163c9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.01044840494792); (6.25 : 5.01044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataBaseDataContext/tblGrupos/tblGrupos_tblDatos" />
+      <nodes>
+        <classShapeMoniker Id="6b57846b-2d16-48ff-9fc2-245d0c071699" />
+        <classShapeMoniker Id="e2dd7e4e-da2e-46c3-9c88-24cd731163c9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 5.7612939453125); (1.75 : 6.5857568359375); (6.25 : 6.5857568359375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataBaseDataContext/tblPagina/tblPagina_tblDatos" />
+      <nodes>
+        <classShapeMoniker Id="5df9fd17-e6c6-47cf-93b2-0605beb7bf4f" />
+        <classShapeMoniker Id="e2dd7e4e-da2e-46c3-9c88-24cd731163c9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.06814697265625); (3.5 : 5.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataBaseDataContext/tblPagina/tblPagina_tblGrupos" />
+      <nodes>
+        <classShapeMoniker Id="5df9fd17-e6c6-47cf-93b2-0605beb7bf4f" />
+        <classShapeMoniker Id="6b57846b-2d16-48ff-9fc2-245d0c071699" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.06814697265625); (3.5 : 2.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataBaseDataContext/tblTipoUsuario/tblTipoUsuario_tblUsuario" />
+      <nodes>
+        <classShapeMoniker Id="329298b9-4063-44a2-844f-b589d08cd97e" />
+        <classShapeMoniker Id="c9edf9f5-c3ac-4899-96dd-ce7c5c0017e1" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
