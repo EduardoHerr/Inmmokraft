@@ -14,6 +14,11 @@ namespace CapaNegocio
             var st = db.tblPagina.Select(x => x);
             return st.ToList();
         }
+        static public tblPagina obtenerPagxID(int key)
+        {
+            tblPagina pag = db.tblPagina.Single(r => r.idPagina == key);
+            return pag;
+        }
 
         static public List<tblGrupos> obtenerGrupo(int key)
         {

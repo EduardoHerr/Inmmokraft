@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,14 @@ namespace CapaNegocio
             return dat;
         }
 
+        
+
+        static public tblDatos obtenerDat()
+        {
+            tblDatos dat = (tblDatos)db.tblDatos.Where(r => r.datEstado == 'A');
+            return dat;
+        }
+
         static public Array obtenerImg(int key)
         {
             var img = from i in db.tblDatos where i.idDato==key select i.datArte.ToArray();
@@ -46,7 +55,7 @@ namespace CapaNegocio
            
             try
             {
-                objDatos.idUsuario = 8;
+                
                 objDatos.datEstado = 'A';
                 db.tblDatos.InsertOnSubmit(objDatos);
                 db.SubmitChanges();
@@ -55,6 +64,27 @@ namespace CapaNegocio
             {
 
                 throw new ArgumentException("Datos no guardados: " + ex.Message);
+            }
+        }
+
+        static public void actualizaDatos1(tblDatos objDatos)
+        {
+            try
+            {
+                tblDatos objactualiza = db.tblDatos.Single(r => r.idDato == objDatos.idDato);
+                objactualiza.datContInteresado = objDatos.datContInteresado;
+                objactualiza.datCantInteresado = objDatos.datCantInteresado;
+                objactualiza.datContramensaje = objDatos.datContramensaje;
+                objactualiza.datCantRecibidos = objDatos.datCantRecibidos;
+                objactualiza.datLlamadaFinal = objDatos.datLlamadaFinal;
+                objactualiza.datCita = objDatos.datCita;
+
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw new ArgumentException("Datos no modificados: " + ex.Message);
             }
         }
 
@@ -73,12 +103,7 @@ namespace CapaNegocio
                 objactualiza.datFechaHoraPub = objDatos.datFechaHoraPub;
                 objactualiza.datSitio = objDatos.datSitio;
                 objactualiza.datGrupoPost = objDatos.datGrupoPost;
-                objactualiza.datContInteresado = objDatos.datContInteresado;
-                objactualiza.datCantInteresado = objDatos.datCantInteresado;
-                objactualiza.datContramensaje = objDatos.datContramensaje;
-                objactualiza.datCantRecibidos = objDatos.datCantRecibidos;
-                objactualiza.datLlamadaFinal = objDatos.datLlamadaFinal;
-                objactualiza.datCita = objDatos.datCita;
+                
 
                 db.SubmitChanges();
             }

@@ -9,8 +9,12 @@ namespace CapaNegocio
     public class logGrupo
     {
         static DataBaseDataContext db = new DataBaseDataContext();
+        static public tblGrupos obtenerDatos(int key)
+        {
+            tblGrupos dat = db.tblGrupos.Single(r => r.idGrupo == key);
+            return dat;
+        }
 
-        
 
     }
 }

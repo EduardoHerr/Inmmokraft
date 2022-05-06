@@ -59,7 +59,7 @@ namespace WebApp1.Mantenimiento
                 }
                 else if (rol==3)
                 {
-
+                    Response.Redirect("~/Mantenimiento/analistaView.aspx");
                 }
                 else
                 {

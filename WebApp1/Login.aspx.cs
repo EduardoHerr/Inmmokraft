@@ -70,7 +70,7 @@ namespace WebApp1
                             {
                                 Session["rol"] = "3";
                                 Session["nombre"] = nombre;
-                                Response.Redirect("~/Mantenimiento/PageDatos.aspx");
+                                Response.Redirect("~/Mantenimiento/analistaView.aspx");
                             }
 
                         }
