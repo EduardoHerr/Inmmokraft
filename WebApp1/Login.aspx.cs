@@ -12,6 +12,7 @@ namespace WebApp1
 {
     public partial class Login : System.Web.UI.Page
     {
+        static tblUsuario user = new tblUsuario ();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -20,80 +21,56 @@ namespace WebApp1
             }
         }
 
-        void ingresar(string ci, string clave)
+        protected void btnRecuperar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(ci)||string.IsNullOrEmpty(clave))
+            olvido();
+        }
+
+        private void olvido()
+        {
+            if (string.IsNullOrEmpty(txtUsuario.Text))
             {
-                lblMensaje.ForeColor = Color.DarkRed;
-                lblMensaje.Text = "Campo Vacio";
+                lblMensaje.Text = "Ingrese su cedula para el proceso de recuperacion";
             }
             else
             {
-                if (string.IsNullOrWhiteSpace(ci)||string.IsNullOrWhiteSpace(clave))
+                bool existe = logUser.cilogin(txtUsuario.Text);
                 {
-                    lblMensaje.ForeColor = Color.DarkRed;
-                    lblMensaje.Text = "Espacio en Blanco";
-                }
-                else
-                {
-                    bool usExiste = logUser.usLog(ci);
-                    bool usCorrecto = logUser.autentificarLog(ci, clave);
-
-                    if (usExiste)
+                    if (existe)
                     {
-                        if (usCorrecto)
+                        
+
+
+                        user = logUser.inforci(txtUsuario.Text);
+                        string from = "diabulusinmusic444666@gmail.com";
+                        string contra = "Eduardo28";
+                        string to = user.usCorreo;
+                        string msj = "Su contraseña olvidada es: " + user.usClave;
+
+                        if (new recuperacionCorreo().enviarCorreo(from, contra, to, msj))
                         {
-                            tblUsuario us = new tblUsuario();
+                            lblMensaje.ForeColor = Color.Green;
+                            lblMensaje.Text = "La clave se envio con exito...";
 
-                            us = logUser.autentificarxLoginlog(ci, clave);
-
-                            int tuser = (int)us.idTipUsu;
-                            string nombre = us.usNombre;
-                            
-                            if (tuser==1)
-                            {
-                                Session["rol"] = "1";
-                                Session["nombre"] = nombre;
-                                Response.Redirect("~/inicioAdmin.aspx");
-                            }
-
-                            if (tuser == 2)
-                            {
-                                string poster = us.idUsuario.ToString();
-                                Session["rol"] = "2";
-                                Session["nombre"] = nombre;
-                                Session["idPost"] = poster ;
-                                Response.Redirect("~/Mantenimiento/postViewer.aspx");
-                            }
-
-                            if (tuser == 3)
-                            {
-                                Session["rol"] = "3";
-                                Session["nombre"] = nombre;
-                                Response.Redirect("~/Mantenimiento/analistaView.aspx");
-                            }
 
                         }
                         else
                         {
-                            lblMensaje.ForeColor = Color.DarkRed;
-                            lblMensaje.Text = "Datos Incorrectos..";
+                            lblMensaje.ForeColor = Color.Red;
+                            lblMensaje.Text = "Correo no enviado...";
                         }
+
+
+
                     }
                     else
                     {
-                        lblMensaje.ForeColor = Color.DarkRed;
-                        lblMensaje.Text = "Usuarios no Existentes";
+                        lblMensaje.Text = "Cedula incorrecta o no existente...";
+                        txtUsuario.Text = "";
                     }
-
                 }
             }
-
-        }
-
-        protected void btnIngreso_Click(object sender, EventArgs e)
-        {
-            ingresar(txtCi.Text,txtPassword.Text);
+            
         }
     }
 }

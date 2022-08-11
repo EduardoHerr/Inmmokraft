@@ -35,14 +35,42 @@ namespace WebApp1.Mantenimiento
                         #region CargaNormal
 
                         
-                        txtFecha.Text = Convert.ToDateTime(dt.datFechaHoraPub).ToString("dd/MM/yyyy");
-                        txtHora.Text = Convert.ToDateTime(dt.datFechaHoraPub).ToString("HH:mm");
+                        txtFecha.Text = Convert.ToDateTime(dt.datFechaHoraPub).ToString("yyyy-MM-dd HH:mm:ss").Replace(' ', 'T');
                         txtPerfil.Text = dt.datPerfil.ToString();
                         txtPropiedad.Text = dt.datPropiedad.ToString();
                         txtTipo.Text = dt.datTipo.ToString();
-                        txtSitio.Text = dt.datSitio.ToString();
-                        txtGrupos.Text = dt.datGrupoPost.ToString();
+                        txtSitio.Text = dt.datSitio.ToString();                        
                         txtSubir.Text = dt.datTituloArte.ToString();
+
+                        #region Ifs
+                        if (dt.datContInteresado != null)
+                        {
+                            txtContIntFecha.Text = Convert.ToDateTime(dt.datContInteresado).ToString("yyyy-MM-dd HH:mm:ss").Replace(' ', 'T');
+                        }
+                        if (dt.datCantInteresado != null)
+                        {
+                            txtCantInt.Text = Convert.ToInt32(dt.datCantInteresado).ToString();
+                        }
+
+                        if (dt.datContramensaje != null)
+                        {
+                            txtContraFecha.Text = Convert.ToDateTime(dt.datContramensaje).ToString("yyyy-MM-dd HH:mm:ss").Replace(' ', 'T');
+                        }
+                        if (dt.datCantRecibidos != null)
+                        {
+                            txtCantRec.Text = Convert.ToInt32(dt.datCantRecibidos).ToString();
+                        }
+                        if (dt.datCita != null)
+                        {
+                            txtCitaFecha.Text = Convert.ToDateTime(dt.datCita).ToString("yyyy-MM-dd HH:mm:ss").Replace(' ', 'T');
+                        }
+                        if (dt.datLlamadaFinal != null)
+                        {
+                            txtLlamada.Text = Convert.ToInt32(dt.datLlamadaFinal).ToString();
+                        }
+                        #endregion
+
+
                         #endregion
 
 
@@ -54,13 +82,7 @@ namespace WebApp1.Mantenimiento
                         }
                         #endregion
 
-                        #region cargarGrupo
-                        gr = logGrupo.obtenerDatos(Convert.ToInt32(dt.idGrupo));
-                        if (gr!=null)
-                        {
-                            txtGrupo.Text = gr.grupNombre.ToString();
-                        }
-                        #endregion
+                        
 
                         #region cargarPag
                         pg = logPagina.obtenerPagxID(Convert.ToInt32(dt.idPagina));
@@ -115,12 +137,12 @@ namespace WebApp1.Mantenimiento
             try
             {
                 dt.idDato = dato;
-                dt.datContInteresado = Convert.ToDateTime(txtContIntFecha.Text + " " + txtContIntDia.Text);
+                dt.datContInteresado = Convert.ToDateTime(txtContIntFecha.Text);
                 dt.datCantInteresado = Convert.ToInt32(txtCantInt.Text);
-                dt.datContramensaje = Convert.ToDateTime(txtContIntFecha.Text + " " + txtContraDia.Text);
+                dt.datContramensaje = Convert.ToDateTime(txtContraFecha.Text);
                 dt.datCantRecibidos = Convert.ToInt32(txtCantRec.Text);
                 dt.datLlamadaFinal = txtLlamada.Text;
-                dt.datCita = Convert.ToDateTime(txtCitaFecha.Text + " " + txtCitaDia.Text);
+                dt.datCita = Convert.ToDateTime(txtCitaFecha.Text );
 
                 logDatos.actualizaDatos1(dt);
                 lblMensaje.ForeColor = System.Drawing.Color.DarkGreen;
@@ -136,6 +158,11 @@ namespace WebApp1.Mantenimiento
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
             guardar();
+        }
+
+        protected void btnRegresa_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Mantenimiento/analistaView.aspx");
         }
     }
 }

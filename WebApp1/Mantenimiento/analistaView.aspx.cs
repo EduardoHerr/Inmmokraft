@@ -23,7 +23,7 @@ namespace WebApp1.Mantenimiento
         {
             string cadena = "workstation id=Inmmokraft.mssql.somee.com;packet size=4096;user id=Barbas_SQLLogin_1;pwd=xhuilpj8aq;data source=Inmmokraft.mssql.somee.com;persist security info=False;initial catalog=Inmmokraft";
             SqlConnection con = new SqlConnection(cadena);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM tblUsuario,tblDatos,tblPagina,tblGrupos Where tblDatos.idUsuario=tblUsuario.idUsuario and tblDatos.idGrupo=tblGrupos.idGrupo and tblDatos.idPagina=tblPagina.idPagina and tblDatos.datEstado='A'",con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM tblUsuario,tblDatos,tblPagina Where tblDatos.idUsuario=tblUsuario.idUsuario and  tblDatos.idPagina=tblPagina.idPagina and tblDatos.datEstado='A'", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
 
             DataTable dt = new DataTable();

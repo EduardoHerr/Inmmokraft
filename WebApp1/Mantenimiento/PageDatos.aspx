@@ -1,26 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mantenimiento/Plantilla.Master" AutoEventWireup="true" CodeBehind="PageDatos.aspx.cs" Inherits="WebApp1.Mantenimiento.PageDatos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div style="margin: 0px 10px;">
     <div>
-        <asp:Button ID="btnAgregarDato" CssClass="btn btn-light" OnClick="btnAgregarDato_Click" runat="server" Text="Agregar Dato" />
+        <asp:Button ID="btnAgregarDato" CssClass="btn btn-primary" OnClick="btnAgregarDato_Click" runat="server" Text=" 🕀 Agregar" />
     </div>
     <br />
     <asp:GridView ID="gdvDatos" AutoGenerateColumns="false" OnRowCommand="gdvDatos_RowCommand" runat="server" CssClass="table table-dark table-hover">
         <Columns>
             <asp:TemplateField HeaderText="Usuario">
                 <ItemTemplate>
-                    <asp:Label ID="lblUsuario" runat="server" Text='<%#Eval("idUsuario") %>'></asp:Label>    
+                    <asp:Label ID="lblUsuario" runat="server" Text='<%#Eval("usNombre") %>'></asp:Label>    
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Pagina">
                 <ItemTemplate>
-                    <asp:Label ID="lblPagina" runat="server" Text='<%#Eval("idPagina") %>'></asp:Label>    
+                    <asp:Label ID="lblPagina" runat="server" Text='<%#Eval("sitNombre") %>'></asp:Label>    
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Grupo">
-                <ItemTemplate>
-                    <asp:Label ID="lblGrupo" runat="server" Text='<%#Eval("idGrupo") %>'></asp:Label>    
-                </ItemTemplate>
-            </asp:TemplateField>
+            
             <asp:TemplateField HeaderText="Perfil">
                 <ItemTemplate>
                     <asp:Label ID="lblPerfil" runat="server" Text='<%#Eval("datPerfil") %>'></asp:Label>    
@@ -66,4 +63,5 @@
         </Columns>
 
     </asp:GridView>
+        </div>
 </asp:Content>

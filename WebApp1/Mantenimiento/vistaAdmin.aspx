@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mantenimiento/Plantilla.Master" AutoEventWireup="true" CodeBehind="vistaAdmin.aspx.cs" Inherits="WebApp1.Mantenimiento.vistaAdmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
+    <div style="margin:0px 5px;">
     <div>
-        <asp:Button ID="btnAgregar" runat="server" Text="Agregar" />
+        <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="btn btn-primary" OnClick="btnAgregar_Click"/>
     </div>
     <br />
     <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
@@ -47,6 +48,6 @@
     </Columns>
 
     </asp:GridView>
-
+        </div>
 
 </asp:Content>

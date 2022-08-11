@@ -54,5 +54,11 @@ namespace WebApp1.Mantenimiento
         {
 
         }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Mantenimiento/nuevoUsuario.aspx");
+            
+        }
     }
 }

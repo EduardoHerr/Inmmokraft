@@ -7,34 +7,86 @@
     border-radius:5px;
     margin:5px 10px;
 }
+#lblNombre{
+    margin-left:5px;
+}
 
 
-#lnkDatos{
-    text-decoration:none;
+#lnkDatos {
+    text-decoration: none;
 }
 
     /* Style the links inside the navigation bar */
-    .topnav a {
-        float: left;
-        display: block;
-        color: black;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        border-color: black;
+.topnav a {
+    float: left;
+    width: 100px;
+    display: block;
+    
+    text-align: center;
+    padding: 10px 5px;
+    text-decoration: none;
+    font-size: 17px;
+    
+}
+
+.fill:hover,
+.fill:focus {
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 2em var(--hover);
+}
+
+.fill {
+    --color: #1c8ff6;
+    --hover: #3498DB;
+}
+
+
+    a {
+      color: var(--color) !important;
+      -webkit-transition: 0.25s;
+      transition: 0.25s;
     }
 
-        /* Change the color of links on hover */
-        .topnav a:hover {
-            background-color: #ddd;
-            color: black;
+        a:hover,
+        a:focus {
+            border-color: var(--hover);
+            color: #fff !important;
+            border-radius: 10px!important;
         }
+#ctl00_ContentPlaceHolder1_ReportViewer1_ctl09_ctl04_ctl00_ButtonLink{
+    border:none;
+}
+.ActiveLink{
+    border:none;
+}
+
+.ActiveLink:hover,.ActiveLink:focus{
+    border:none;
+    color:black;
+}
+a {
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+    border-radius: 10px;
+}
+
+#lnkSalir {
+    --color: #ec0c0c !important;
+    --hover: #E74C3C;
+    
+}
+
+        /* Change the color of links on hover */
+    
 
         /* Add an active class to highlight the current page */
         .topnav a.active {
             background-color: #04AA6D;
-            color: white;
+            
         }
 
     /* Hide the link that should open and close the topnav on small screens */

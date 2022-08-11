@@ -1,23 +1,20 @@
-﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Mantenimiento/Plantilla.Master" AutoEventWireup="true" CodeBehind="postViewer.aspx.cs" Inherits="WebApp1.Mantenimiento.postViewer" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mantenimiento/Plantilla.Master" AutoEventWireup="true" CodeBehind="postViewer.aspx.cs" Inherits="WebApp1.Mantenimiento.postViewer" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
-        <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="btn btn-primary" OnClick="btnAgregar_Click"/>
+    <div style="margin:0px 5px;">
+        <asp:Button ID="btnAgregar" runat="server" Text=" 🕀 Agregar" CssClass="btn btn-primary" OnClick="btnAgregar_Click"/>
     </div>
     <br />
-    <asp:GridView ID="grvDatos" AutoGenerateColumns="false" OnRowCommand="grvDatos_RowCommand" runat="server" CssClass="table table-dark table-hover">
+    <center>
+        
+        <asp:Label ID="lbl1" runat="server" Text="<h3>No hay Datos Existentes....</h3>"></asp:Label>
+    </center>
+    <div style="margin:0px 10px;">
+    <asp:GridView ID="grvDatos" AutoGenerateColumns="false" OnRowCommand="grvDatos_RowCommand" runat="server" CssClass="table table-dark table-hover rounded-right">
         <Columns>
-            <asp:TemplateField HeaderText="Pagina">
-                <ItemTemplate>
-                    <asp:Label ID="lblPagina" runat="server" Text='<%#Eval("idPagina") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-
-            <asp:TemplateField HeaderText="Grupo">
-                <ItemTemplate>
-                    <asp:Label ID="lblGrupo" runat="server" Text='<%#Eval("idGrupo") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
+            
+            <asp:BoundField HeaderText="Página" DataField="sitNombre" />
+            
 
             <asp:TemplateField HeaderText="Perfil">
                 <ItemTemplate>
@@ -55,11 +52,11 @@
                 </ItemTemplate>
             </asp:TemplateField>
 
-            <asp:TemplateField HeaderText="Post">
+            <%--<asp:TemplateField HeaderText="Post">
                 <ItemTemplate>
                     <asp:Label ID="lblPost" runat="server" Text='<%#Eval("datGrupoPost") %>'></asp:Label>
                 </ItemTemplate>
-            </asp:TemplateField>
+            </asp:TemplateField>--%>
 
             <asp:TemplateField HeaderText="Accion">
                 <ItemTemplate>
@@ -71,4 +68,5 @@
 
         </Columns>
     </asp:GridView>
+        </div>
 </asp:Content>

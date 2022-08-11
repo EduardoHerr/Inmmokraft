@@ -66,6 +66,7 @@
     <Compile Include="logRol.cs" />
     <Compile Include="logUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="recuperacionCorreo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">

@@ -11,20 +11,27 @@ namespace WebApp1.Mantenimiento
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (Session["nombre"] != null)
             {
-                lblNombre.Text = "Bienvenido, de nuevo "+ Session["nombre"].ToString();
+                lblNombre.Text = "Bienvenido, de nuevo " + Session["nombre"].ToString();
             }
             else
             {
-                Response.Redirect("~/Login.aspx");
+                Response.Redirect("~/Loggin.aspx");
             }
 
-            if (Session["rol"]!=null)
+            if (Session["rol"] != null)
             {
                 int rol = Convert.ToInt32(Session["rol"]);
-                if (rol!=1)
+                if (rol == 2)
                 {
+                    pnlAdmin.Visible = false;
+                    pnlAnalista.Visible = false;
+                }
+                else if (rol==3)
+                {
+                    pnlAnalista.Visible = true;
                     pnlAdmin.Visible = false;
                 }
 
@@ -44,8 +51,8 @@ namespace WebApp1.Mantenimiento
         protected void lnkSalir_Click(object sender, EventArgs e)
         {
             Session["nombre"] = null;
-            Response.Redirect("~/Login.aspx");
-            
+            Response.Redirect("~/Loggin.aspx");
+
         }
 
         protected void lnkInicio_Click(object sender, EventArgs e)
@@ -57,7 +64,7 @@ namespace WebApp1.Mantenimiento
                 {
                     Response.Redirect("~/Mantenimiento/postViewer.aspx");
                 }
-                else if (rol==3)
+                else if (rol == 3)
                 {
                     Response.Redirect("~/Mantenimiento/analistaView.aspx");
                 }
@@ -66,8 +73,8 @@ namespace WebApp1.Mantenimiento
                     Response.Redirect("~/inicioAdmin.aspx");
                 }
 
+                }
+
             }
-           
-        }
     }
 }

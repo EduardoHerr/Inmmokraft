@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -22,9 +24,14 @@ namespace WebApp1.Mantenimiento
         {
             List<tblDatos> dat = new List<tblDatos>();
             dat = logDatos.listarDatos();
-            if (dat!=null)
+            SqlConnection cn = new SqlConnection("Data Source=Inmmokraft.mssql.somee.com;Initial Catalog=Inmmokraft;Persist Security Info=True;User ID=Barbas_SQLLogin_1;Password=xhuilpj8aq");
+            SqlCommand cmd = new SqlCommand("select * from tbldatos inner join tblPagina on tblDatos.idPagina=tblPagina.idPagina inner join tblUsuario on tblDatos.idUsuario = tblUsuario.idUsuario", cn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+            if (ds!=null)
             {
-                gdvDatos.DataSource = dat;
+                gdvDatos.DataSource = ds;
                 gdvDatos.DataBind();
             }
         }

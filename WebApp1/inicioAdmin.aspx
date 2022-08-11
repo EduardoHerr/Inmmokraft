@@ -42,7 +42,7 @@
 
                 <table class="auto-style1">
                     <tr>
-                        <td><a href="Mantenimiento/PageDatos.aspx"><image src="img/report.png"> </image><center><p>Reportes</p></center> </a> </td>
+                        <td><a href="Mantenimiento/PageDatos.aspx"><image src="img/report.png"> </image><center><p>Datos</p></center> </a> </td>
                         <td><a href="Mantenimiento/vistaAdmin.aspx?tusu=1"><image src="img/admin.png"></image><center><p>Administrador</p></center> </a></td>
                         <td><a href="Mantenimiento/vistaAdmin.aspx?tusu=2"><image src="img/post.png"></image><center><p>Posteador</p></center> </a></td>
                         <td><a href="Mantenimiento/vistaAdmin.aspx?tusu=3"><image src="img/analista.png"></image><center><p>Analista</p></center> </a></td>

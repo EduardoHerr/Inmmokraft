@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,17 @@ namespace CapaNegocio
             return st;
         }
 
+        public static bool cilogin(string ci)
+        {
+            var auto = db.tblUsuario.Any(usu => usu.usEstado == 'A' & usu.usCedula.Equals(ci));
+            return auto;
+        }
+        public static tblUsuario inforci(string ci)
+        {
+            var auto = db.tblUsuario.Single(usu => usu.usCedula.Equals(ci));
+
+            return auto;
+        }
 
         public static tblUsuario obtenerxID(int key)
         {

@@ -23,6 +23,7 @@ namespace WebApp1.Mantenimiento
             {
                 loadImagen();
                 cargarPag();
+                btnEditar.Visible=false;
                 if (Request["cod"]!=null)
                 {
                     btnEditar.Visible = true;
@@ -31,18 +32,13 @@ namespace WebApp1.Mantenimiento
                     dat = logDatos.obtenerDatos(codigo);
                     if (dat!=null)
                     {
-                        txtFecha.Text = Convert.ToDateTime(dat.datFechaHoraPub).ToString("dd/MM/yyyy");
-                        txtHora.Text = Convert.ToDateTime(dat.datFechaHoraPub).ToString("HH:mm");
+                        txtFecha.Text = Convert.ToDateTime(dat.datFechaHoraPub).ToString("yyyy-MM-dd HH:mm:ss").Replace(' ', 'T');
                         txtPerfil.Text = dat.datPerfil.ToString();
                         txtPropiedad.Text = dat.datPropiedad.ToString();
                         txtTipo.Text = dat.datTipo.ToString();
                         txtSitio.Text = dat.datSitio.ToString();
-                        txtGrupos.Text = dat.datGrupoPost.ToString();
+                        //txtGrupos.Text = dat.datGrupoPost.ToString();
                         ddl1.SelectedValue=dat.idPagina.ToString();
-                        int val = Convert.ToInt32(dat.idPagina.ToString());
-                        cargaGrupo(val);
-                        ddl2.SelectedValue=dat.idGrupo.ToString();
-
                         consultaImagenes(codigo);
                         
                     }
@@ -80,7 +76,7 @@ namespace WebApp1.Mantenimiento
 
         void limpiar()
         {
-            txtFecha.Text = txtPerfil.Text = txtPropiedad.Text = txtSitio.Text = txtSubir.Text = txtTipo.Text = txtGrupos.Text = txtHora.Text = "";
+            txtFecha.Text = txtPerfil.Text = txtPropiedad.Text = txtSitio.Text =  txtTipo.Text = txtGrupos.Text =  "";
             ddl1.SelectedIndex = 0;
             loadImagen();
         }
@@ -96,23 +92,11 @@ namespace WebApp1.Mantenimiento
         }
 
 
-        void cargaGrupo(int valor)
-        {
-            List<tblGrupos> listgrup = new List<tblGrupos>();
-            listgrup = logPagina.obtenerGrupo(valor);
-            listgrup.Insert(0, new tblGrupos() { grupNombre = "Seleccione" });
-            ddl2.DataSource = listgrup;
-            ddl2.DataTextField = "grupNombre";
-            ddl2.DataValueField = "idGrupo";
-            ddl2.DataBind();
-        }
+        
         protected void ddl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int pag = ddl1.SelectedIndex;
-            if (pag != 0)
-            {
-                cargaGrupo(pag);
-            }
+            
 
         }
 
@@ -146,10 +130,10 @@ namespace WebApp1.Mantenimiento
         {
             try
             {
-                string fechaHora = txtFecha.Text + " " + txtHora.Text;
+
                 lblMensaje.Text = "";
                 dat = new tblDatos();
-                if (Session["idPost"]!=null)
+                if (Session["idPost"] != null)
                 {
                     int key = Convert.ToInt32(Session["idPost"]);
                     dat.idUsuario = key;
@@ -158,11 +142,11 @@ namespace WebApp1.Mantenimiento
                 dat.datPerfil = txtPerfil.Text;
                 dat.datPropiedad = txtPropiedad.Text;
                 dat.datTipo = txtTipo.Text;
-                dat.datFechaHoraPub = Convert.ToDateTime(fechaHora);
+                dat.datFechaHoraPub = Convert.ToDateTime(txtFecha.Text);
                 dat.datSitio = txtSitio.Text;
-                dat.datGrupoPost = Convert.ToInt32(txtGrupos.Text);
+                //dat.datGrupoPost = Convert.ToInt32(txtGrupos.Text);
                 dat.idPagina = Convert.ToInt32(ddl1.SelectedValue);
-                dat.idGrupo = Convert.ToInt32(ddl2.SelectedValue);
+                
                 if (fileu.HasFile)
                 {
                     dat.datTituloArte = fileu.FileName;
@@ -203,7 +187,7 @@ namespace WebApp1.Mantenimiento
 
                 logDatos.registrarDatos(dat);
                 lblMensaje.Text = "Datos Registrados Exitosamente";
-                
+
             }
             catch (Exception)
             {
@@ -232,18 +216,18 @@ namespace WebApp1.Mantenimiento
             {
                 lblMensaje.Text = "";
 
-                string fechaHora = txtFecha.Text + " " + txtHora.Text;
+                
                 lblMensaje.Text = "";
                 
 
                 datmod.datPerfil = txtPerfil.Text;
                 datmod.datPropiedad = txtPropiedad.Text;
                 datmod.datTipo = txtTipo.Text;
-                datmod.datFechaHoraPub = Convert.ToDateTime(fechaHora);
+                datmod.datFechaHoraPub = Convert.ToDateTime(txtFecha.Text);
                 datmod.datSitio = txtSitio.Text;
-                datmod.datGrupoPost = Convert.ToInt32(txtGrupos.Text);
+                //datmod.datGrupoPost = Convert.ToInt32(txtGrupos.Text);
                 datmod.idPagina = Convert.ToInt32(ddl1.SelectedValue);
-                datmod.idGrupo = Convert.ToInt32(ddl2.SelectedValue);
+                
                 
 
                 if (fileu.HasFile)

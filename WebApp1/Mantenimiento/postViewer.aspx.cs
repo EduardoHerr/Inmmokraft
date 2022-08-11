@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,10 +16,11 @@ namespace WebApp1.Mantenimiento
     public partial class postViewer : System.Web.UI.Page
     {
         logDatos dat = new logDatos();
-
+        logPagina logPagina = new logPagina(); 
         protected void Page_Load(object sender, EventArgs e)
         {
             cargarDatos();
+            
         }
 
         private void cargarDatos()
@@ -26,14 +30,29 @@ namespace WebApp1.Mantenimiento
                 int key = Convert.ToInt32(Session["idPost"]);
                 List<tblDatos> dat = new List<tblDatos>();
                 dat = logDatos.listarDatosxID(key);
-                if (dat!=null)
+                SqlConnection cn = new SqlConnection("Data Source=Inmmokraft.mssql.somee.com;Initial Catalog=Inmmokraft;Persist Security Info=True;User ID=Barbas_SQLLogin_1;Password=xhuilpj8aq");
+                SqlCommand cmd = new SqlCommand("select * from tbldatos inner join tblPagina on tblDatos.idPagina=tblPagina.idPagina Where idUsuario="+key, cn);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                sda.Fill(ds);
+                
+                if (ds!=null)
                 {
-                    grvDatos.DataSource = dat;
+                    grvDatos.DataSource = ds;
                     grvDatos.DataBind();
                 }
             }
-            
-            
+            if (!logDatos.verificarDatos(Convert.ToInt32(Session["idPost"])))
+            {
+                lbl1.ForeColor = Color.FromArgb(31, 97, 141);
+
+            }
+            else
+            {
+                lbl1.Visible = false;
+            }
+
+
         }
 
         protected void grvDatos_RowCommand(object sender, GridViewCommandEventArgs e)

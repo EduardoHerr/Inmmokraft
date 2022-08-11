@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -21,8 +22,10 @@ namespace CapaNegocio
 
         public static List<tblDatos> listarDatosxID(int key)
         {
-            var st = db.tblDatos.Where(dat => dat.datEstado == 'A' & dat.idUsuario==key);
+            var st = db.tblDatos.Where(dat => dat.datEstado == 'A' & dat.idUsuario == key);
             return st.ToList();
+
+
         }
 
         static public tblDatos obtenerDatos(int key)
@@ -128,6 +131,26 @@ namespace CapaNegocio
                 throw new ArgumentException("Datos no eliminados: " + ex.Message);
             }
             
+        }
+
+        static public bool verificarDatos(int key)
+        {
+            try
+            {
+                if (db.tblDatos.Any(x=> x.idUsuario==key))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
     }

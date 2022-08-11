@@ -1,32 +1,35 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mantenimiento/Plantilla.Master" AutoEventWireup="true" CodeBehind="analistaView.aspx.cs" Inherits="WebApp1.Mantenimiento.analistaView" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <a href="analistaController.aspx">Link</a>
-    <div style="width:100%; overflow:auto">
-        <asp:GridView ID="gvrAnalista" runat="server" AutoGenerateColumns="false" OnRowCommand="gvrAnalista_RowCommand" CssClass="table  table-bordered table-dark">
+    <style>
+        .grifv{
+            width:1340px;
+            height:445px;
+            overflow:auto;
+            margin:0px 5px;
+        }
+    </style>
+    <div class="grifv">
+        <asp:GridView ID="gvrAnalista" runat="server" AutoGenerateColumns="false" OnRowCommand="gvrAnalista_RowCommand" CssClass="table table-hover table-bordered table-dark">
             <Columns>
                 <asp:TemplateField HeaderText="Acciones">
                     <ItemTemplate>
-                        <asp:LinkButton ID="lnkEditar" CommandArgument='<%#Eval("idDato") %>' CommandName="Editar" runat="server" CssClass="btn btn-outline-warning">Añadir</asp:LinkButton>
+                        <asp:LinkButton ID="lnkEditar" CommandArgument='<%#Eval("idDato") %>' CommandName="Editar" runat="server" CssClass="btn btn-outline-warning">Actualizar</asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
 
                 <asp:TemplateField HeaderText="Usuario">
                     <ItemTemplate>
-                        <asp:Label ID="lblUsuario" runat="server" Text='<%#Eval("usNombre") %>'></asp:Label>
+                        <asp:Label ID="lblUsuario" runat="server" Text='<%# string.Concat(Eval("usNombre"), " ",Eval("usApellido") )%>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-
+                    
                 <asp:TemplateField HeaderText="Pagina">
                 <ItemTemplate>
                     <asp:Label ID="lblPagina" runat="server" Text='<%#Eval("sitNombre") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
 
-            <asp:TemplateField HeaderText="Grupo">
-                <ItemTemplate>
-                    <asp:Label ID="lblGrupo" runat="server" Text='<%#Eval("grupNombre") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
+           
 
             <asp:TemplateField HeaderText="Perfil">
                 <ItemTemplate>

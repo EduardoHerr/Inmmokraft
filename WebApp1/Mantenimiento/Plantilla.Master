@@ -12,21 +12,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    
     <form id="form1" runat="server">
         <div>
             <div class="topnav" id="myTopnav">
-                <asp:LinkButton ID="lnkInicio" runat="server" OnClick="lnkInicio_Click">Inicio</asp:LinkButton>
+                <asp:LinkButton ID="lnkInicio" runat="server" CssClass="fill" OnClick="lnkInicio_Click">INICIO</asp:LinkButton>
                 <asp:Panel ID="pnlAdmin" runat="server">
-                    <asp:LinkButton ID="lnkUsuario" runat="server" OnClick="lnkUsuario_Click">Usuarios</asp:LinkButton>
-                <a href="Reportes/WebForm1.aspx">Reportes</a>
-                </asp:Panel>    
+                    <asp:LinkButton ID="lnkUsuario" runat="server" CssClass="fill" OnClick="lnkUsuario_Click">USUARIOS</asp:LinkButton>
+                    </asp:Panel>
+                <asp:Panel ID="pnlAnalista" runat="server">
+                <a href="reporteVista.aspx" class="fill">REPORTES</a>
+                    </asp:Panel>
                 <div class="v1"></div>
-                <asp:LinkButton ID="lnkSalir" runat="server" OnClick="lnkSalir_Click" >Salir</asp:LinkButton>
+                <asp:LinkButton ID="lnkSalir" runat="server" CssClass="fill" OnClick="lnkSalir_Click" >SALIR</asp:LinkButton>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa-solid fa-bars"></i></a>
             </div>
             <br />
             <h4>
-                <asp:Label ID="lblNombre" runat="server" Text="Hola, Bienvenido"></asp:Label></h4>
+                <asp:Label ID="lblNombre" runat="server" Text="Hola, Bienvenido"></asp:Label>
+
+            </h4>
             <br />
 
             <div class="contenido">

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mantenimiento/Plantilla.Master" AutoEventWireup="true" CodeBehind="nuevoUsuario.aspx.cs" Inherits="WebApp1.Mantenimiento.nuevoUsuario" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mantenimiento/Plantilla.Master" AutoEventWireup="true" CodeBehind="nuevoUsuario.aspx.cs" Inherits="WebApp1.Mantenimiento.nuevoUsuario" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" type="text/css" href="css/registroUser.css" />
     <div class="padre">
