@@ -14,7 +14,7 @@ namespace WebApp1.Mantenimiento
     public partial class analistaView : System.Web.UI.Page
     {
         private static tblDatos data = new tblDatos();
-        static DataTable dt = new DataTable();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             cargarDatos();
@@ -30,7 +30,8 @@ namespace WebApp1.Mantenimiento
                 SqlCommand cmd = new SqlCommand("select * from tblDatos inner join tblPagina on tblDatos.idPagina = tblPagina.idPagina inner join tblUsuario on tblDatos.idUsuario = tblUsuario.idUsuario where   datEstado='A'", con);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 con.Open();
-                sda.Fill(dt);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
                 con.Close();
             
 
