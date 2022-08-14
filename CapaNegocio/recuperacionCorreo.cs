@@ -21,8 +21,10 @@ namespace CapaNegocio
                 m.To.Add(new MailAddress(to));
 
                 m.Body = msj;
+                m.IsBodyHtml = true;
                 m.Subject = "Recuperar Contraseña..";
-                smtp.Host = "smtp.gmail.com";
+                
+                smtp.Host = "smtp.office365.com";
 
                 smtp.Port = 587;
                 smtp.Credentials = new NetworkCredential(from, contra);

@@ -23,6 +23,12 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                     
+                <asp:TemplateField HeaderText="Perfil">
+                <ItemTemplate>
+                    <asp:Label ID="lblPerfil" runat="server" Text='<%#Eval("datPerfil") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField> 
+
                 <asp:TemplateField HeaderText="Pagina">
                 <ItemTemplate>
                     <asp:Label ID="lblPagina" runat="server" Text='<%#Eval("sitNombre") %>'></asp:Label>
@@ -31,11 +37,7 @@
 
            
 
-            <asp:TemplateField HeaderText="Perfil">
-                <ItemTemplate>
-                    <asp:Label ID="lblPerfil" runat="server" Text='<%#Eval("datPerfil") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
+            
 
             <asp:TemplateField HeaderText="Propiedad">
                 <ItemTemplate>
@@ -64,11 +66,7 @@
                 </ItemTemplate>
             </asp:TemplateField>
 
-            <asp:TemplateField HeaderText="Post">
-                <ItemTemplate>
-                    <asp:Label ID="lblPost" runat="server" Text='<%#Eval("datGrupoPost") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
+            
 
                 <asp:TemplateField HeaderText="Contestación">
                 <ItemTemplate>
@@ -94,18 +92,8 @@
                 </ItemTemplate>
             </asp:TemplateField>
 
-                <asp:TemplateField HeaderText="Llamada">
-                <ItemTemplate>
-                    <asp:Label ID="lblLlamada" runat="server" Text='<%#Eval("datLlamadaFinal") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
 
 
-                <asp:TemplateField HeaderText="Cita">
-                <ItemTemplate>
-                    <asp:Label ID="lblCita" runat="server" Text='<%#Eval("datCita") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
             </Columns>
 
         </asp:GridView>

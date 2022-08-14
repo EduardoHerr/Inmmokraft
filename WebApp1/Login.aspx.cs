@@ -23,6 +23,8 @@ namespace WebApp1
 
         protected void btnRecuperar_Click(object sender, EventArgs e)
         {
+            lblMensaje.Text = "";
+            
             olvido();
         }
 
@@ -42,15 +44,42 @@ namespace WebApp1
 
 
                         user = logUser.inforci(txtUsuario.Text);
-                        string from = "diabulusinmusic444666@gmail.com";
-                        string contra = "Eduardo28";
+                        string from = "consorcioinmmokraft_2022@outlook.com";
+                        string contra = "Inmmokraft2022";
                         string to = user.usCorreo;
-                        string msj = "Su contraseña olvidada es: " + user.usClave;
+                        //string msj = "Su contraseña olvidada es: " + user.usClave;
+                        string msj = @"
+                            <div style=' width: 500px;'>
+                                <div style=' background-color: #0e589f;color: aliceblue;border-radius:15px 15px 0 0   ;'>
+                                    <center>
+                                            <h2>Consorcio Inmmokraft LTDA.</h2>
+                                    </center>
+                                </div>
+                             <div style='padding: 0 10px;border: 1px solid #0e589f;'>
+                                <br/>
+                                <h3 style='color:black'>Sr(a)" + user.usNombre+" "+user.usApellido+ @"</h3>
+                                <p style='color:black'> Aquí en Inmmokraft nos aseguramos de que tenga simpre acceso a todos sus datos por eso contestamos a la recuperación de su clave.</p>
+                                <b style='color:black'> Clave: " + user.usClave+ @"</b>
+                                <p style='color:black'>Un placer atenderle.</p>
+                                <center>
+                                   <b style='color:black'> Ing Hugo Yepez.</b>
+                                </center>
+                                <br/>
+                                </div>
+                                <div style='background-color: #0e589f;color: aliceblue;border-radius: 0 0 15px 15px  ;'>
+                                    <center>
+                                    <p><b> Dirección:</b> Jose Palomino & Dolores Sucre.</p>
+        
+                                    <p><b>Telefono:</b> 0987654321</p>
+                                </center>
+                                </div>
+                               </div> ";
 
                         if (new recuperacionCorreo().enviarCorreo(from, contra, to, msj))
                         {
                             lblMensaje.ForeColor = Color.Green;
                             lblMensaje.Text = "La clave se envio con exito...";
+                            txtUsuario.Text = "";
 
 
                         }

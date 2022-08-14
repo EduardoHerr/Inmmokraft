@@ -1,6 +1,6 @@
 ﻿.centrar {
     width: 650px;
-    height: 950px;
+    height: 1015px;
     margin: 10px auto;
     padding: 15px;
     background: rgba( 253, 251, 251, 0.25 );
@@ -29,4 +29,7 @@
 
 #img1{
     margin-top:4px;
+}
+#txtLista{
+    font-size:12px;
 }

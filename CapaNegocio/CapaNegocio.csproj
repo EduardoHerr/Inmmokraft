@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="logDatos.cs" />
     <Compile Include="logGrupo.cs" />
+    <Compile Include="logObservacion.cs" />
     <Compile Include="logPagina.cs" />
     <Compile Include="logRol.cs" />
     <Compile Include="logUser.cs" />

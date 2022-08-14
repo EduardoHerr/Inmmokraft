@@ -258,40 +258,22 @@ namespace WebApp1.Mantenimiento
         protected global::System.Web.UI.WebControls.TextBox txtCantRec;
 
         /// <summary>
-        /// Control lblCita.
+        /// Control txtIds.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCita;
+        protected global::System.Web.UI.WebControls.TextBox txtIds;
 
         /// <summary>
-        /// Control txtCitaFecha.
+        /// Control txtLista.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCitaFecha;
-
-        /// <summary>
-        /// Control lblLlamada.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLlamada;
-
-        /// <summary>
-        /// Control txtLlamada.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLlamada;
+        protected global::System.Web.UI.WebControls.TextBox txtLista;
 
         /// <summary>
         /// Control btnEnviar.

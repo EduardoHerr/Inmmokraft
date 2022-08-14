@@ -92,5 +92,10 @@ namespace WebApp1
         {
             ingresar(txtUsuario.Text, txtClave.Text);
         }
+
+        protected void btnRecuperar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
     }
 }

@@ -16,15 +16,16 @@
     <form id="form1" runat="server">
         <div>
             <div class="topnav" id="myTopnav">
-                <asp:LinkButton ID="lnkInicio" runat="server" CssClass="fill" OnClick="lnkInicio_Click">INICIO</asp:LinkButton>
+                <asp:LinkButton ID="lnkInicio" runat="server" CssClass="fill" OnClick="lnkInicio_Click">Inicio</asp:LinkButton>
                 <asp:Panel ID="pnlAdmin" runat="server">
-                    <asp:LinkButton ID="lnkUsuario" runat="server" CssClass="fill" OnClick="lnkUsuario_Click">USUARIOS</asp:LinkButton>
+                    <asp:LinkButton ID="lnkUsuario" runat="server" CssClass="fill" OnClick="lnkUsuario_Click">Usuarios</asp:LinkButton>
+                    <asp:LinkButton ID="lnkVistaAnalista" runat="server"  CssClass="fill" OnClick="lnkVistaAnalista_Click">Analisis</asp:LinkButton>
                     </asp:Panel>
                 <asp:Panel ID="pnlAnalista" runat="server">
                 <a href="reporteVista.aspx" class="fill">REPORTES</a>
                     </asp:Panel>
                 <div class="v1"></div>
-                <asp:LinkButton ID="lnkSalir" runat="server" CssClass="fill" OnClick="lnkSalir_Click" >SALIR</asp:LinkButton>
+                <asp:LinkButton ID="lnkSalir" runat="server" CssClass="fill" OnClick="lnkSalir_Click" >Salir</asp:LinkButton>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa-solid fa-bars"></i></a>
             </div>
             <br />
@@ -36,6 +37,7 @@
 
             <div class="contenido">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    
                 </asp:ContentPlaceHolder>
             </div>
 

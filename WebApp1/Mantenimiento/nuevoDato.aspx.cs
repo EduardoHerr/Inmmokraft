@@ -21,6 +21,7 @@ namespace WebApp1.Mantenimiento
         {
             if (!IsPostBack)
             {
+                Page.Form.Attributes.Add("enctype", "multipart/form-data");
                 loadImagen();
                 cargarPag();
                 btnEditar.Visible=false;
@@ -96,8 +97,6 @@ namespace WebApp1.Mantenimiento
         protected void ddl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int pag = ddl1.SelectedIndex;
-            
-
         }
 
         private void loadImagen()
@@ -128,75 +127,87 @@ namespace WebApp1.Mantenimiento
 
         void guardar()
         {
-            try
+            if (string.IsNullOrEmpty(txtFecha.Text)|| string.IsNullOrEmpty(txtGrupos.Text) || string.IsNullOrEmpty(txtPerfil.Text) || string.IsNullOrEmpty(txtPropiedad.Text) || string.IsNullOrEmpty(txtSitio.Text) || string.IsNullOrEmpty(txtTipo.Text))
             {
-
-                lblMensaje.Text = "";
-                dat = new tblDatos();
-                if (Session["idPost"] != null)
-                {
-                    int key = Convert.ToInt32(Session["idPost"]);
-                    dat.idUsuario = key;
-
-                }
-                dat.datPerfil = txtPerfil.Text;
-                dat.datPropiedad = txtPropiedad.Text;
-                dat.datTipo = txtTipo.Text;
-                dat.datFechaHoraPub = Convert.ToDateTime(txtFecha.Text);
-                dat.datSitio = txtSitio.Text;
-                //dat.datGrupoPost = Convert.ToInt32(txtGrupos.Text);
-                dat.idPagina = Convert.ToInt32(ddl1.SelectedValue);
-                
-                if (fileu.HasFile)
-                {
-                    dat.datTituloArte = fileu.FileName;
-                    #region CargarImagen
-                    //Funcion para devolver el tamaño de la imagen
-                    int tamanio = fileu.PostedFile.ContentLength;
-                    //array de bytes
-                    byte[] imageNew = new byte[tamanio];
-                    //Leer la imagen original
-                    fileu.PostedFile.InputStream.Read(imageNew, 0, tamanio);
-
-                    Bitmap imageOriginalBinaria = new Bitmap(fileu.PostedFile.InputStream);
-                    #endregion
-
-                    #region imgThumbnail
-                    System.Drawing.Image imgt;
-                    int tamaniot = 200;
-                    imgt = Redimencion(imageOriginalBinaria, tamaniot);
-                    byte[] bImageOriginal = new byte[tamaniot];
-                    ImageConverter Convertidor = new ImageConverter();
-                    bImageOriginal = (byte[])Convertidor.ConvertTo(imgt, typeof(byte[]));
-                    #endregion
-
-                    #region InsertarenBD
-                    dat.datArte = bImageOriginal;
-
-
-                    #endregion
-                    string imagendataurl64 = "data:image/jpeg;base64," + Convert.ToBase64String(bImageOriginal);
-
-
-                    img1.ImageUrl = imagendataurl64;
-                }
-
-
-
-
-
-                logDatos.registrarDatos(dat);
-                lblMensaje.Text = "Datos Registrados Exitosamente";
-
+                lblMensaje.ForeColor = Color.Red;
+                lblMensaje.Text = "Campo Vacio";
             }
-            catch (Exception)
+            else
             {
+                if (string.IsNullOrWhiteSpace(txtFecha.Text) || string.IsNullOrWhiteSpace(txtGrupos.Text) || string.IsNullOrWhiteSpace(txtPerfil.Text) || string.IsNullOrWhiteSpace(txtPropiedad.Text) || string.IsNullOrWhiteSpace(txtSitio.Text) || string.IsNullOrWhiteSpace(txtTipo.Text))
+                {
+                    lblMensaje.ForeColor = Color.Red;
+                    lblMensaje.Text = "Campo en Blanco";
+                }
+                else
+                {
+                    try
+                    {
 
-                throw;
+                        lblMensaje.Text = "";
+                        dat = new tblDatos();
+                        if (Session["idPost"] != null)
+                        {
+                            int key = Convert.ToInt32(Session["idPost"]);
+                            dat.idUsuario = key;
+
+                        }
+                        dat.datPerfil = txtPerfil.Text.Trim();
+                        dat.datPropiedad = txtPropiedad.Text.ToLower().Trim();
+                        dat.datTipo = txtTipo.Text.Trim();
+                        dat.datFechaHoraPub = Convert.ToDateTime(txtFecha.Text);
+                        dat.datSitio = txtSitio.Text.Trim();
+                        
+                        dat.idPagina = Convert.ToInt32(ddl1.SelectedValue);
+
+                        if (fileu.HasFile)
+                        {
+                            dat.datTituloArte = fileu.FileName;
+                            #region CargarImagen
+                            //Funcion para devolver el tamaño de la imagen
+                            int tamanio = fileu.PostedFile.ContentLength;
+                            //array de bytes
+                            byte[] imageNew = new byte[tamanio];
+                            //Leer la imagen original
+                            fileu.PostedFile.InputStream.Read(imageNew, 0, tamanio);
+
+                            Bitmap imageOriginalBinaria = new Bitmap(fileu.PostedFile.InputStream);
+                            #endregion
+
+                            #region imgThumbnail
+                            System.Drawing.Image imgt;
+                            int tamaniot = 200;
+                            imgt = Redimencion(imageOriginalBinaria, tamaniot);
+                            byte[] bImageOriginal = new byte[tamaniot];
+                            ImageConverter Convertidor = new ImageConverter();
+                            bImageOriginal = (byte[])Convertidor.ConvertTo(imgt, typeof(byte[]));
+                            #endregion
+
+                            #region InsertarenBD
+                            dat.datArte = bImageOriginal;
+
+
+                            #endregion
+                            string imagendataurl64 = "data:image/jpeg;base64," + Convert.ToBase64String(bImageOriginal);
+
+
+                            img1.ImageUrl = imagendataurl64;
+                        }
+                        
+                        logDatos.registrarDatos(dat);
+                        lblMensaje.ForeColor = Color.Green;
+                        lblMensaje.Text = "Datos Registrados Exitosamente";
+                        
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+                }
             }
-            
-
         }
+
         public System.Drawing.Image Redimencion(System.Drawing.Image imageOriginal, int Alto)
         {
             var Radio = (double)Alto / imageOriginal.Height;
@@ -205,7 +216,6 @@ namespace WebApp1.Mantenimiento
             var niredi = new Bitmap(nancho, nalto);
             var g = Graphics.FromImage(niredi);
             g.DrawImage(imageOriginal, 0, 0, nancho, nalto);
-
 
             return niredi;
         }
@@ -216,20 +226,14 @@ namespace WebApp1.Mantenimiento
             {
                 lblMensaje.Text = "";
 
-                
-                lblMensaje.Text = "";
-                
-
                 datmod.datPerfil = txtPerfil.Text;
                 datmod.datPropiedad = txtPropiedad.Text;
                 datmod.datTipo = txtTipo.Text;
                 datmod.datFechaHoraPub = Convert.ToDateTime(txtFecha.Text);
                 datmod.datSitio = txtSitio.Text;
-                //datmod.datGrupoPost = Convert.ToInt32(txtGrupos.Text);
+                
                 datmod.idPagina = Convert.ToInt32(ddl1.SelectedValue);
                 
-                
-
                 if (fileu.HasFile)
                 {
                     #region CargarImagen
@@ -263,12 +267,8 @@ namespace WebApp1.Mantenimiento
                     img1.ImageUrl = imagendataurl64;
                 }
 
-
-
-
                 logDatos.actualizaDatos(datmod);
-                lblMensaje.Text = "Datos Actualizados Exitosamente";
-               
+                lblMensaje.Text = "Datos Actualizados Exitosamente";              
 
             }
             catch (Exception)

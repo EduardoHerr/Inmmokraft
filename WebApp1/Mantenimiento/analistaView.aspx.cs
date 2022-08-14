@@ -14,6 +14,7 @@ namespace WebApp1.Mantenimiento
     public partial class analistaView : System.Web.UI.Page
     {
         private static tblDatos data = new tblDatos();
+        static DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
             cargarDatos();
@@ -21,18 +22,25 @@ namespace WebApp1.Mantenimiento
 
         private void cargarDatos()
         {
-            string cadena = "workstation id=Inmmokraft.mssql.somee.com;packet size=4096;user id=Barbas_SQLLogin_1;pwd=xhuilpj8aq;data source=Inmmokraft.mssql.somee.com;persist security info=False;initial catalog=Inmmokraft";
-            SqlConnection con = new SqlConnection(cadena);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM tblUsuario,tblDatos,tblPagina Where tblDatos.idUsuario=tblUsuario.idUsuario and  tblDatos.idPagina=tblPagina.idPagina and tblDatos.datEstado='A'", con);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
 
-            DataTable dt = new DataTable();
+            
+                
+                string cadena = "workstation id=Inmmokraft.mssql.somee.com;packet size=4096;user id=Barbas_SQLLogin_1;pwd=xhuilpj8aq;data source=Inmmokraft.mssql.somee.com;persist security info=False;initial catalog=Inmmokraft";
+                SqlConnection con = new SqlConnection(cadena);
+                SqlCommand cmd = new SqlCommand("select * from tblDatos inner join tblPagina on tblDatos.idPagina = tblPagina.idPagina inner join tblUsuario on tblDatos.idUsuario = tblUsuario.idUsuario where   datEstado='A'", con);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                con.Open();
+                sda.Fill(dt);
+                con.Close();
+            
 
-            con.Open();
-            sda.Fill(dt);
+
+
+            
+            
             gvrAnalista.DataSource = dt;
             gvrAnalista.DataBind();
-            con.Close();
+            
         }
 
         protected void gvrAnalista_RowCommand(object sender, GridViewCommandEventArgs e)

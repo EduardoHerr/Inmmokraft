@@ -279,6 +279,12 @@ namespace WebApp1.Mantenimiento {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
             
+            private global::System.Data.DataColumn columnsitNombre;
+            
+            private global::System.Data.DataColumn columnusNombre;
+            
+            private global::System.Data.DataColumn columnusApellido;
+            
             private global::System.Data.DataColumn columnidDato;
             
             private global::System.Data.DataColumn columnidUsuario;
@@ -317,29 +323,7 @@ namespace WebApp1.Mantenimiento {
             
             private global::System.Data.DataColumn columndatEstado;
             
-            private global::System.Data.DataColumn columnExpr1;
-            
-            private global::System.Data.DataColumn columnsitNombre;
-            
-            private global::System.Data.DataColumn columnsitAutor;
-            
-            private global::System.Data.DataColumn columnExpr2;
-            
-            private global::System.Data.DataColumn columnidTipUsu;
-            
-            private global::System.Data.DataColumn columnusNombre;
-            
-            private global::System.Data.DataColumn columnusApellido;
-            
-            private global::System.Data.DataColumn columnusCedula;
-            
-            private global::System.Data.DataColumn columnusClave;
-            
-            private global::System.Data.DataColumn columnusCorreo;
-            
-            private global::System.Data.DataColumn columnusDireccion;
-            
-            private global::System.Data.DataColumn columnusEstado;
+            private global::System.Data.DataColumn columntusuRol;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -372,6 +356,30 @@ namespace WebApp1.Mantenimiento {
             protected DataTable1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn sitNombreColumn {
+                get {
+                    return this.columnsitNombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn usNombreColumn {
+                get {
+                    return this.columnusNombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn usApellidoColumn {
+                get {
+                    return this.columnusApellido;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -528,97 +536,9 @@ namespace WebApp1.Mantenimiento {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Expr1Column {
+            public global::System.Data.DataColumn tusuRolColumn {
                 get {
-                    return this.columnExpr1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn sitNombreColumn {
-                get {
-                    return this.columnsitNombre;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn sitAutorColumn {
-                get {
-                    return this.columnsitAutor;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Expr2Column {
-                get {
-                    return this.columnExpr2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn idTipUsuColumn {
-                get {
-                    return this.columnidTipUsu;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn usNombreColumn {
-                get {
-                    return this.columnusNombre;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn usApellidoColumn {
-                get {
-                    return this.columnusApellido;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn usCedulaColumn {
-                get {
-                    return this.columnusCedula;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn usClaveColumn {
-                get {
-                    return this.columnusClave;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn usCorreoColumn {
-                get {
-                    return this.columnusCorreo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn usDireccionColumn {
-                get {
-                    return this.columnusDireccion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn usEstadoColumn {
-                get {
-                    return this.columnusEstado;
+                    return this.columntusuRol;
                 }
             }
             
@@ -660,6 +580,9 @@ namespace WebApp1.Mantenimiento {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public DataTable1Row AddDataTable1Row(
+                        string sitNombre, 
+                        string usNombre, 
+                        string usApellido, 
                         int idUsuario, 
                         int idPagina, 
                         int idGrupo, 
@@ -678,18 +601,12 @@ namespace WebApp1.Mantenimiento {
                         string datLlamadaFinal, 
                         System.DateTime datCita, 
                         string datEstado, 
-                        string sitNombre, 
-                        string sitAutor, 
-                        int idTipUsu, 
-                        string usNombre, 
-                        string usApellido, 
-                        string usCedula, 
-                        string usClave, 
-                        string usCorreo, 
-                        string usDireccion, 
-                        string usEstado) {
+                        string tusuRol) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        sitNombre,
+                        usNombre,
+                        usApellido,
                         null,
                         idUsuario,
                         idPagina,
@@ -709,18 +626,7 @@ namespace WebApp1.Mantenimiento {
                         datLlamadaFinal,
                         datCita,
                         datEstado,
-                        null,
-                        sitNombre,
-                        sitAutor,
-                        null,
-                        idTipUsu,
-                        usNombre,
-                        usApellido,
-                        usCedula,
-                        usClave,
-                        usCorreo,
-                        usDireccion,
-                        usEstado};
+                        tusuRol};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -728,11 +634,9 @@ namespace WebApp1.Mantenimiento {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row FindByidDatoExpr1Expr2(int idDato, int Expr1, int Expr2) {
+            public DataTable1Row FindByidDato(int idDato) {
                 return ((DataTable1Row)(this.Rows.Find(new object[] {
-                            idDato,
-                            Expr1,
-                            Expr2})));
+                            idDato})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -752,6 +656,9 @@ namespace WebApp1.Mantenimiento {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
+                this.columnsitNombre = base.Columns["sitNombre"];
+                this.columnusNombre = base.Columns["usNombre"];
+                this.columnusApellido = base.Columns["usApellido"];
                 this.columnidDato = base.Columns["idDato"];
                 this.columnidUsuario = base.Columns["idUsuario"];
                 this.columnidPagina = base.Columns["idPagina"];
@@ -771,23 +678,18 @@ namespace WebApp1.Mantenimiento {
                 this.columndatLlamadaFinal = base.Columns["datLlamadaFinal"];
                 this.columndatCita = base.Columns["datCita"];
                 this.columndatEstado = base.Columns["datEstado"];
-                this.columnExpr1 = base.Columns["Expr1"];
-                this.columnsitNombre = base.Columns["sitNombre"];
-                this.columnsitAutor = base.Columns["sitAutor"];
-                this.columnExpr2 = base.Columns["Expr2"];
-                this.columnidTipUsu = base.Columns["idTipUsu"];
-                this.columnusNombre = base.Columns["usNombre"];
-                this.columnusApellido = base.Columns["usApellido"];
-                this.columnusCedula = base.Columns["usCedula"];
-                this.columnusClave = base.Columns["usClave"];
-                this.columnusCorreo = base.Columns["usCorreo"];
-                this.columnusDireccion = base.Columns["usDireccion"];
-                this.columnusEstado = base.Columns["usEstado"];
+                this.columntusuRol = base.Columns["tusuRol"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
+                this.columnsitNombre = new global::System.Data.DataColumn("sitNombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsitNombre);
+                this.columnusNombre = new global::System.Data.DataColumn("usNombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnusNombre);
+                this.columnusApellido = new global::System.Data.DataColumn("usApellido", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnusApellido);
                 this.columnidDato = new global::System.Data.DataColumn("idDato", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidDato);
                 this.columnidUsuario = new global::System.Data.DataColumn("idUsuario", typeof(int), null, global::System.Data.MappingType.Element);
@@ -826,39 +728,19 @@ namespace WebApp1.Mantenimiento {
                 base.Columns.Add(this.columndatCita);
                 this.columndatEstado = new global::System.Data.DataColumn("datEstado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndatEstado);
-                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr1);
-                this.columnsitNombre = new global::System.Data.DataColumn("sitNombre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsitNombre);
-                this.columnsitAutor = new global::System.Data.DataColumn("sitAutor", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsitAutor);
-                this.columnExpr2 = new global::System.Data.DataColumn("Expr2", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr2);
-                this.columnidTipUsu = new global::System.Data.DataColumn("idTipUsu", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidTipUsu);
-                this.columnusNombre = new global::System.Data.DataColumn("usNombre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnusNombre);
-                this.columnusApellido = new global::System.Data.DataColumn("usApellido", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnusApellido);
-                this.columnusCedula = new global::System.Data.DataColumn("usCedula", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnusCedula);
-                this.columnusClave = new global::System.Data.DataColumn("usClave", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnusClave);
-                this.columnusCorreo = new global::System.Data.DataColumn("usCorreo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnusCorreo);
-                this.columnusDireccion = new global::System.Data.DataColumn("usDireccion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnusDireccion);
-                this.columnusEstado = new global::System.Data.DataColumn("usEstado", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnusEstado);
+                this.columntusuRol = new global::System.Data.DataColumn("tusuRol", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntusuRol);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnidDato,
-                                this.columnExpr1,
-                                this.columnExpr2}, true));
+                                this.columnidDato}, true));
+                this.columnsitNombre.MaxLength = 100;
+                this.columnusNombre.MaxLength = 50;
+                this.columnusApellido.MaxLength = 50;
                 this.columnidDato.AutoIncrement = true;
                 this.columnidDato.AutoIncrementSeed = -1;
                 this.columnidDato.AutoIncrementStep = -1;
                 this.columnidDato.AllowDBNull = false;
                 this.columnidDato.ReadOnly = true;
+                this.columnidDato.Unique = true;
                 this.columndatPerfil.MaxLength = 100;
                 this.columndatPropiedad.MaxLength = 100;
                 this.columndatTipo.MaxLength = 100;
@@ -866,25 +748,7 @@ namespace WebApp1.Mantenimiento {
                 this.columndatSitio.MaxLength = 100;
                 this.columndatLlamadaFinal.MaxLength = 100;
                 this.columndatEstado.MaxLength = 1;
-                this.columnExpr1.AutoIncrement = true;
-                this.columnExpr1.AutoIncrementSeed = -1;
-                this.columnExpr1.AutoIncrementStep = -1;
-                this.columnExpr1.AllowDBNull = false;
-                this.columnExpr1.ReadOnly = true;
-                this.columnsitNombre.MaxLength = 100;
-                this.columnsitAutor.MaxLength = 100;
-                this.columnExpr2.AutoIncrement = true;
-                this.columnExpr2.AutoIncrementSeed = -1;
-                this.columnExpr2.AutoIncrementStep = -1;
-                this.columnExpr2.AllowDBNull = false;
-                this.columnExpr2.ReadOnly = true;
-                this.columnusNombre.MaxLength = 50;
-                this.columnusApellido.MaxLength = 50;
-                this.columnusCedula.MaxLength = 50;
-                this.columnusClave.MaxLength = 50;
-                this.columnusCorreo.MaxLength = 50;
-                this.columnusDireccion.MaxLength = 50;
-                this.columnusEstado.MaxLength = 1;
+                this.columntusuRol.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1023,6 +887,54 @@ namespace WebApp1.Mantenimiento {
             internal DataTable1Row(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableDataTable1 = ((DataTable1DataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string sitNombre {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.sitNombreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'sitNombre\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.sitNombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string usNombre {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.usNombreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'usNombre\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.usNombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string usApellido {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.usApellidoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'usApellido\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.usApellidoColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1326,184 +1238,54 @@ namespace WebApp1.Mantenimiento {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Expr1 {
-                get {
-                    return ((int)(this[this.tableDataTable1.Expr1Column]));
-                }
-                set {
-                    this[this.tableDataTable1.Expr1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string sitNombre {
+            public string tusuRol {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.sitNombreColumn]));
+                        return ((string)(this[this.tableDataTable1.tusuRolColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'sitNombre\' de la tabla \'DataTable1\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'tusuRol\' de la tabla \'DataTable1\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.sitNombreColumn] = value;
+                    this[this.tableDataTable1.tusuRolColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string sitAutor {
-                get {
-                    try {
-                        return ((string)(this[this.tableDataTable1.sitAutorColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'sitAutor\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.sitAutorColumn] = value;
-                }
+            public bool IssitNombreNull() {
+                return this.IsNull(this.tableDataTable1.sitNombreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Expr2 {
-                get {
-                    return ((int)(this[this.tableDataTable1.Expr2Column]));
-                }
-                set {
-                    this[this.tableDataTable1.Expr2Column] = value;
-                }
+            public void SetsitNombreNull() {
+                this[this.tableDataTable1.sitNombreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int idTipUsu {
-                get {
-                    try {
-                        return ((int)(this[this.tableDataTable1.idTipUsuColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'idTipUsu\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.idTipUsuColumn] = value;
-                }
+            public bool IsusNombreNull() {
+                return this.IsNull(this.tableDataTable1.usNombreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string usNombre {
-                get {
-                    try {
-                        return ((string)(this[this.tableDataTable1.usNombreColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'usNombre\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.usNombreColumn] = value;
-                }
+            public void SetusNombreNull() {
+                this[this.tableDataTable1.usNombreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string usApellido {
-                get {
-                    try {
-                        return ((string)(this[this.tableDataTable1.usApellidoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'usApellido\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.usApellidoColumn] = value;
-                }
+            public bool IsusApellidoNull() {
+                return this.IsNull(this.tableDataTable1.usApellidoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string usCedula {
-                get {
-                    try {
-                        return ((string)(this[this.tableDataTable1.usCedulaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'usCedula\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.usCedulaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string usClave {
-                get {
-                    try {
-                        return ((string)(this[this.tableDataTable1.usClaveColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'usClave\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.usClaveColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string usCorreo {
-                get {
-                    try {
-                        return ((string)(this[this.tableDataTable1.usCorreoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'usCorreo\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.usCorreoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string usDireccion {
-                get {
-                    try {
-                        return ((string)(this[this.tableDataTable1.usDireccionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'usDireccion\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.usDireccionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string usEstado {
-                get {
-                    try {
-                        return ((string)(this[this.tableDataTable1.usEstadoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'usEstado\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.usEstadoColumn] = value;
-                }
+            public void SetusApellidoNull() {
+                this[this.tableDataTable1.usApellidoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1724,122 +1506,14 @@ namespace WebApp1.Mantenimiento {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IssitNombreNull() {
-                return this.IsNull(this.tableDataTable1.sitNombreColumn);
+            public bool IstusuRolNull() {
+                return this.IsNull(this.tableDataTable1.tusuRolColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetsitNombreNull() {
-                this[this.tableDataTable1.sitNombreColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IssitAutorNull() {
-                return this.IsNull(this.tableDataTable1.sitAutorColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetsitAutorNull() {
-                this[this.tableDataTable1.sitAutorColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsidTipUsuNull() {
-                return this.IsNull(this.tableDataTable1.idTipUsuColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetidTipUsuNull() {
-                this[this.tableDataTable1.idTipUsuColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsusNombreNull() {
-                return this.IsNull(this.tableDataTable1.usNombreColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetusNombreNull() {
-                this[this.tableDataTable1.usNombreColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsusApellidoNull() {
-                return this.IsNull(this.tableDataTable1.usApellidoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetusApellidoNull() {
-                this[this.tableDataTable1.usApellidoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsusCedulaNull() {
-                return this.IsNull(this.tableDataTable1.usCedulaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetusCedulaNull() {
-                this[this.tableDataTable1.usCedulaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsusClaveNull() {
-                return this.IsNull(this.tableDataTable1.usClaveColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetusClaveNull() {
-                this[this.tableDataTable1.usClaveColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsusCorreoNull() {
-                return this.IsNull(this.tableDataTable1.usCorreoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetusCorreoNull() {
-                this[this.tableDataTable1.usCorreoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsusDireccionNull() {
-                return this.IsNull(this.tableDataTable1.usDireccionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetusDireccionNull() {
-                this[this.tableDataTable1.usDireccionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsusEstadoNull() {
-                return this.IsNull(this.tableDataTable1.usEstadoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetusEstadoNull() {
-                this[this.tableDataTable1.usEstadoColumn] = global::System.Convert.DBNull;
+            public void SettusuRolNull() {
+                this[this.tableDataTable1.tusuRolColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2002,6 +1676,9 @@ namespace WebApp1.Mantenimiento.OrigenDatosTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "DataTable1";
+            tableMapping.ColumnMappings.Add("sitNombre", "sitNombre");
+            tableMapping.ColumnMappings.Add("usNombre", "usNombre");
+            tableMapping.ColumnMappings.Add("usApellido", "usApellido");
             tableMapping.ColumnMappings.Add("idDato", "idDato");
             tableMapping.ColumnMappings.Add("idUsuario", "idUsuario");
             tableMapping.ColumnMappings.Add("idPagina", "idPagina");
@@ -2021,18 +1698,7 @@ namespace WebApp1.Mantenimiento.OrigenDatosTableAdapters {
             tableMapping.ColumnMappings.Add("datLlamadaFinal", "datLlamadaFinal");
             tableMapping.ColumnMappings.Add("datCita", "datCita");
             tableMapping.ColumnMappings.Add("datEstado", "datEstado");
-            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
-            tableMapping.ColumnMappings.Add("sitNombre", "sitNombre");
-            tableMapping.ColumnMappings.Add("sitAutor", "sitAutor");
-            tableMapping.ColumnMappings.Add("Expr2", "Expr2");
-            tableMapping.ColumnMappings.Add("idTipUsu", "idTipUsu");
-            tableMapping.ColumnMappings.Add("usNombre", "usNombre");
-            tableMapping.ColumnMappings.Add("usApellido", "usApellido");
-            tableMapping.ColumnMappings.Add("usCedula", "usCedula");
-            tableMapping.ColumnMappings.Add("usClave", "usClave");
-            tableMapping.ColumnMappings.Add("usCorreo", "usCorreo");
-            tableMapping.ColumnMappings.Add("usDireccion", "usDireccion");
-            tableMapping.ColumnMappings.Add("usEstado", "usEstado");
+            tableMapping.ColumnMappings.Add("tusuRol", "tusuRol");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2049,13 +1715,11 @@ namespace WebApp1.Mantenimiento.OrigenDatosTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        tblDatos.idDato, tblDatos.idUsuario, tblDatos.idPagina, tblDatos.idGrupo, tblDatos.datPerfil, tblDatos.datPropiedad, tblDatos.datTipo, tblDatos.datArte, tblDatos.datTituloArte, tblDatos.datFechaHoraPub, tblDatos.datSitio, 
-                         tblDatos.datGrupoPost, tblDatos.datContInteresado, tblDatos.datCantInteresado, tblDatos.datContramensaje, tblDatos.datCantRecibidos, tblDatos.datLlamadaFinal, tblDatos.datCita, tblDatos.datEstado, 
-                         tblPagina.idPagina AS Expr1, tblPagina.sitNombre, tblPagina.sitAutor, tblUsuario.idUsuario AS Expr2, tblUsuario.idTipUsu, tblUsuario.usNombre, tblUsuario.usApellido, tblUsuario.usCedula, tblUsuario.usClave, 
-                         tblUsuario.usCorreo, tblUsuario.usDireccion, tblUsuario.usEstado
+            this._commandCollection[0].CommandText = @"SELECT        tblPagina.sitNombre, tblUsuario.usNombre, tblUsuario.usApellido, tblDatos.*, tblTipoUsuario.tusuRol
 FROM            tblDatos INNER JOIN
                          tblPagina ON tblDatos.idPagina = tblPagina.idPagina INNER JOIN
-                         tblUsuario ON tblDatos.idUsuario = tblUsuario.idUsuario";
+                         tblUsuario ON tblDatos.idUsuario = tblUsuario.idUsuario INNER JOIN
+                         tblTipoUsuario ON tblUsuario.idTipUsu = tblTipoUsuario.idTipUsu";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

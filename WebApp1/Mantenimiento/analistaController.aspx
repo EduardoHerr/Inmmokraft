@@ -85,7 +85,7 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <asp:Label ID="Label1" runat="server" Text="Contestacion Interes" ></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Contestacion Interesados" ></asp:Label>
                         <asp:TextBox ID="txtContIntFecha" runat="server" CssClass="form-control" TextMode="DateTimeLocal"></asp:TextBox>
                         
                     </div>
@@ -110,7 +110,7 @@
                 </div>
             </div>
             <br />
-            <div class="row">
+            <%--<div class="row">
                 <div class="col">
                     <div class="form-group">
                         <asp:Label ID="lblCita" runat="server" Text="Cita"></asp:Label>
@@ -121,6 +121,32 @@
                 <div class="col">
                     <asp:Label ID="lblLlamada" runat="server" Text="Llamada Final" ></asp:Label>
                     <asp:TextBox ID="txtLlamada" runat="server" TextMode="Number" CssClass="form-control" min="1">1</asp:TextBox>
+                </div>
+            </div>--%>
+            <div class="row">
+                <div class="col-1">
+                    <p>ID</p>
+                </div>
+                <div class="col-3">
+                    <p>Nombre</p>
+                </div>
+                <div class="col-3">
+                    <p>Fecha Cita</p>
+                </div>
+                <div class="col-3">
+                    <p>Llamada final</p>
+                </div>
+
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-1">
+                            <asp:TextBox ID="txtIds" Enabled="false" runat="server" Height="100px" TextMode="MultiLine" ></asp:TextBox>
+                        </div>
+                        <div class="col-9">
+                            <asp:TextBox ID="txtLista" runat="server" TextMode="MultiLine" Width="100%" Height="100px"></asp:TextBox>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
 

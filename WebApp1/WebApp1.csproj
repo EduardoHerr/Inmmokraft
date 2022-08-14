@@ -307,6 +307,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Mantenimiento\ReporteDatos.rdlc" />
+    <EmbeddedResource Include="Mantenimiento\reportController.rdlc" />
     <EmbeddedResource Include="Mantenimiento\Reportes\Report1.rdlc" />
   </ItemGroup>
   <PropertyGroup>

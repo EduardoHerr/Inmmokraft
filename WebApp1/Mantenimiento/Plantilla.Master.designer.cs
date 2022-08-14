@@ -51,6 +51,15 @@ namespace WebApp1.Mantenimiento
         protected global::System.Web.UI.WebControls.LinkButton lnkUsuario;
 
         /// <summary>
+        /// Control lnkVistaAnalista.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkVistaAnalista;
+
+        /// <summary>
         /// Control pnlAnalista.
         /// </summary>
         /// <remarks>

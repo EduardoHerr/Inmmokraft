@@ -11,31 +11,33 @@ namespace WebApp1.Mantenimiento
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //#region ValidacionUsuario
+            //if (Session["nombre"] != null)
+            //{
+            //    lblNombre.Text = "Bienvenido, de nuevo " + Session["nombre"].ToString();
+            //}
+            //else
+            //{
+            //    Response.Redirect("~/Loggin.aspx");
+            //}
 
-            if (Session["nombre"] != null)
-            {
-                lblNombre.Text = "Bienvenido, de nuevo " + Session["nombre"].ToString();
-            }
-            else
-            {
-                Response.Redirect("~/Loggin.aspx");
-            }
+            //if (Session["rol"] != null)
+            //{
+            //    int rol = Convert.ToInt32(Session["rol"]);
+            //    if (rol == 2)
+            //    {
+            //        pnlAdmin.Visible = false;
+            //        pnlAnalista.Visible = false;
+            //    }
+            //    else if (rol == 3)
+            //    {
+            //        pnlAnalista.Visible = true;
+            //        pnlAdmin.Visible = false;
+            //    }
+            //}
+            //#endregion
 
-            if (Session["rol"] != null)
-            {
-                int rol = Convert.ToInt32(Session["rol"]);
-                if (rol == 2)
-                {
-                    pnlAdmin.Visible = false;
-                    pnlAnalista.Visible = false;
-                }
-                else if (rol==3)
-                {
-                    pnlAnalista.Visible = true;
-                    pnlAdmin.Visible = false;
-                }
 
-            }
         }
 
         protected void lnkDatos_Click(object sender, EventArgs e)
@@ -76,5 +78,10 @@ namespace WebApp1.Mantenimiento
                 }
 
             }
+
+        protected void lnkVistaAnalista_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Mantenimiento/analistaView.aspx");
+        }
     }
 }

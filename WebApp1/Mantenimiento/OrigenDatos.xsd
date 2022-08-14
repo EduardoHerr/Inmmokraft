@@ -12,19 +12,20 @@
               <DbSource ConnectionRef="InmmokraftConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        tblDatos.idDato, tblDatos.idUsuario, tblDatos.idPagina, tblDatos.idGrupo, tblDatos.datPerfil, tblDatos.datPropiedad, tblDatos.datTipo, tblDatos.datArte, tblDatos.datTituloArte, tblDatos.datFechaHoraPub, tblDatos.datSitio, 
-                         tblDatos.datGrupoPost, tblDatos.datContInteresado, tblDatos.datCantInteresado, tblDatos.datContramensaje, tblDatos.datCantRecibidos, tblDatos.datLlamadaFinal, tblDatos.datCita, tblDatos.datEstado, 
-                         tblPagina.idPagina AS Expr1, tblPagina.sitNombre, tblPagina.sitAutor, tblUsuario.idUsuario AS Expr2, tblUsuario.idTipUsu, tblUsuario.usNombre, tblUsuario.usApellido, tblUsuario.usCedula, tblUsuario.usClave, 
-                         tblUsuario.usCorreo, tblUsuario.usDireccion, tblUsuario.usEstado
+                    <CommandText>SELECT        tblPagina.sitNombre, tblUsuario.usNombre, tblUsuario.usApellido, tblDatos.*, tblTipoUsuario.tusuRol
 FROM            tblDatos INNER JOIN
                          tblPagina ON tblDatos.idPagina = tblPagina.idPagina INNER JOIN
-                         tblUsuario ON tblDatos.idUsuario = tblUsuario.idUsuario</CommandText>
+                         tblUsuario ON tblDatos.idUsuario = tblUsuario.idUsuario INNER JOIN
+                         tblTipoUsuario ON tblUsuario.idTipUsu = tblTipoUsuario.idTipUsu</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="sitNombre" DataSetColumn="sitNombre" />
+              <Mapping SourceColumn="usNombre" DataSetColumn="usNombre" />
+              <Mapping SourceColumn="usApellido" DataSetColumn="usApellido" />
               <Mapping SourceColumn="idDato" DataSetColumn="idDato" />
               <Mapping SourceColumn="idUsuario" DataSetColumn="idUsuario" />
               <Mapping SourceColumn="idPagina" DataSetColumn="idPagina" />
@@ -44,18 +45,7 @@ FROM            tblDatos INNER JOIN
               <Mapping SourceColumn="datLlamadaFinal" DataSetColumn="datLlamadaFinal" />
               <Mapping SourceColumn="datCita" DataSetColumn="datCita" />
               <Mapping SourceColumn="datEstado" DataSetColumn="datEstado" />
-              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
-              <Mapping SourceColumn="sitNombre" DataSetColumn="sitNombre" />
-              <Mapping SourceColumn="sitAutor" DataSetColumn="sitAutor" />
-              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
-              <Mapping SourceColumn="idTipUsu" DataSetColumn="idTipUsu" />
-              <Mapping SourceColumn="usNombre" DataSetColumn="usNombre" />
-              <Mapping SourceColumn="usApellido" DataSetColumn="usApellido" />
-              <Mapping SourceColumn="usCedula" DataSetColumn="usCedula" />
-              <Mapping SourceColumn="usClave" DataSetColumn="usClave" />
-              <Mapping SourceColumn="usCorreo" DataSetColumn="usCorreo" />
-              <Mapping SourceColumn="usDireccion" DataSetColumn="usDireccion" />
-              <Mapping SourceColumn="usEstado" DataSetColumn="usEstado" />
+              <Mapping SourceColumn="tusuRol" DataSetColumn="tusuRol" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -70,6 +60,27 @@ FROM            tblDatos INNER JOIN
         <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_UserTableName="DataTable1">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="sitNombre" msprop:Generator_ColumnPropNameInRow="sitNombre" msprop:Generator_ColumnPropNameInTable="sitNombreColumn" msprop:Generator_ColumnVarNameInTable="columnsitNombre" msprop:Generator_UserColumnName="sitNombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="usNombre" msprop:Generator_ColumnPropNameInRow="usNombre" msprop:Generator_ColumnPropNameInTable="usNombreColumn" msprop:Generator_ColumnVarNameInTable="columnusNombre" msprop:Generator_UserColumnName="usNombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="usApellido" msprop:Generator_ColumnPropNameInRow="usApellido" msprop:Generator_ColumnPropNameInTable="usApellidoColumn" msprop:Generator_ColumnVarNameInTable="columnusApellido" msprop:Generator_UserColumnName="usApellido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="idDato" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="idDato" msprop:Generator_ColumnPropNameInTable="idDatoColumn" msprop:Generator_ColumnVarNameInTable="columnidDato" msprop:Generator_UserColumnName="idDato" type="xs:int" />
               <xs:element name="idUsuario" msprop:Generator_ColumnPropNameInRow="idUsuario" msprop:Generator_ColumnPropNameInTable="idUsuarioColumn" msprop:Generator_ColumnVarNameInTable="columnidUsuario" msprop:Generator_UserColumnName="idUsuario" type="xs:int" minOccurs="0" />
               <xs:element name="idPagina" msprop:Generator_ColumnPropNameInRow="idPagina" msprop:Generator_ColumnPropNameInTable="idPaginaColumn" msprop:Generator_ColumnVarNameInTable="columnidPagina" msprop:Generator_UserColumnName="idPagina" type="xs:int" minOccurs="0" />
@@ -131,69 +142,10 @@ FROM            tblDatos INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Expr1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_UserColumnName="Expr1" type="xs:int" />
-              <xs:element name="sitNombre" msprop:Generator_ColumnPropNameInRow="sitNombre" msprop:Generator_ColumnPropNameInTable="sitNombreColumn" msprop:Generator_ColumnVarNameInTable="columnsitNombre" msprop:Generator_UserColumnName="sitNombre" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="sitAutor" msprop:Generator_ColumnPropNameInRow="sitAutor" msprop:Generator_ColumnPropNameInTable="sitAutorColumn" msprop:Generator_ColumnVarNameInTable="columnsitAutor" msprop:Generator_UserColumnName="sitAutor" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Expr2" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_UserColumnName="Expr2" type="xs:int" />
-              <xs:element name="idTipUsu" msprop:Generator_ColumnPropNameInRow="idTipUsu" msprop:Generator_ColumnPropNameInTable="idTipUsuColumn" msprop:Generator_ColumnVarNameInTable="columnidTipUsu" msprop:Generator_UserColumnName="idTipUsu" type="xs:int" minOccurs="0" />
-              <xs:element name="usNombre" msprop:Generator_ColumnPropNameInRow="usNombre" msprop:Generator_ColumnPropNameInTable="usNombreColumn" msprop:Generator_ColumnVarNameInTable="columnusNombre" msprop:Generator_UserColumnName="usNombre" minOccurs="0">
+              <xs:element name="tusuRol" msprop:Generator_ColumnPropNameInRow="tusuRol" msprop:Generator_ColumnPropNameInTable="tusuRolColumn" msprop:Generator_ColumnVarNameInTable="columntusuRol" msprop:Generator_UserColumnName="tusuRol" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="usApellido" msprop:Generator_ColumnPropNameInRow="usApellido" msprop:Generator_ColumnPropNameInTable="usApellidoColumn" msprop:Generator_ColumnVarNameInTable="columnusApellido" msprop:Generator_UserColumnName="usApellido" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="usCedula" msprop:Generator_ColumnPropNameInRow="usCedula" msprop:Generator_ColumnPropNameInTable="usCedulaColumn" msprop:Generator_ColumnVarNameInTable="columnusCedula" msprop:Generator_UserColumnName="usCedula" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="usClave" msprop:Generator_ColumnPropNameInRow="usClave" msprop:Generator_ColumnPropNameInTable="usClaveColumn" msprop:Generator_ColumnVarNameInTable="columnusClave" msprop:Generator_UserColumnName="usClave" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="usCorreo" msprop:Generator_ColumnPropNameInRow="usCorreo" msprop:Generator_ColumnPropNameInTable="usCorreoColumn" msprop:Generator_ColumnVarNameInTable="columnusCorreo" msprop:Generator_UserColumnName="usCorreo" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="usDireccion" msprop:Generator_ColumnPropNameInRow="usDireccion" msprop:Generator_ColumnPropNameInTable="usDireccionColumn" msprop:Generator_ColumnVarNameInTable="columnusDireccion" msprop:Generator_UserColumnName="usDireccion" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="usEstado" msprop:Generator_ColumnPropNameInRow="usEstado" msprop:Generator_ColumnPropNameInTable="usEstadoColumn" msprop:Generator_ColumnVarNameInTable="columnusEstado" msprop:Generator_UserColumnName="usEstado" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -205,8 +157,6 @@ FROM            tblDatos INNER JOIN
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:DataTable1" />
       <xs:field xpath="mstns:idDato" />
-      <xs:field xpath="mstns:Expr1" />
-      <xs:field xpath="mstns:Expr2" />
     </xs:unique>
   </xs:element>
 </xs:schema>

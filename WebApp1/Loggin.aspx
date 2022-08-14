@@ -148,7 +148,7 @@
                         <br />
                         <div class="contenedor2">
                             
-                            <asp:Button ID="btnRecuperar"  runat="server" Text="Recuperar Clave" CssClass="btn btn-primary disabled" />
+                            <asp:Button ID="btnRecuperar"  runat="server" Text="Recuperar Clave" CssClass="btn btn-primary" OnClick="btnRecuperar_Click" />
                         </div>
                         <br />
                         <asp:Label ID="lblMensaje" runat="server" Text="" ></asp:Label>

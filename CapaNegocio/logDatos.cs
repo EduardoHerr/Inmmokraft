@@ -27,6 +27,7 @@ namespace CapaNegocio
 
 
         }
+        
 
         static public tblDatos obtenerDatos(int key)
         {
@@ -79,8 +80,7 @@ namespace CapaNegocio
                 objactualiza.datCantInteresado = objDatos.datCantInteresado;
                 objactualiza.datContramensaje = objDatos.datContramensaje;
                 objactualiza.datCantRecibidos = objDatos.datCantRecibidos;
-                objactualiza.datLlamadaFinal = objDatos.datLlamadaFinal;
-                objactualiza.datCita = objDatos.datCita;
+                
 
                 db.SubmitChanges();
             }
@@ -98,7 +98,7 @@ namespace CapaNegocio
                 tblDatos objactualiza = db.tblDatos.Single(r => r.idDato == objDatos.idDato);
                 objactualiza.idUsuario = objDatos.idUsuario;
                 objactualiza.idPagina = objDatos.idPagina;
-                objactualiza.idGrupo = objDatos.idGrupo;
+                
                 objactualiza.datPerfil = objDatos.datPerfil;
                 objactualiza.datPropiedad = objDatos.datPropiedad;
                 objactualiza.datTipo = objDatos.datTipo;
