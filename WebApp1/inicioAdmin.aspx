@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Inicio</title>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -34,6 +34,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" href="Mantenimiento/Imagenes/icon.png"/>
 </head>
 <body>
     <form id="form1" runat="server">

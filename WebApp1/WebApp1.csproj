@@ -124,6 +124,7 @@
     <Content Include="Mantenimiento\css\registroUser.css" />
     <Content Include="Mantenimiento\css\style.css" />
     <Content Include="Mantenimiento\Imagenes\edit.png" />
+    <Content Include="Mantenimiento\Imagenes\icon.png" />
     <Content Include="Mantenimiento\Imagenes\imagen.png" />
     <Content Include="Mantenimiento\nuevoDato.aspx" />
     <Content Include="Mantenimiento\nuevoUsuario.aspx" />
@@ -307,7 +308,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Mantenimiento\ReporteDatos.rdlc" />
-    <EmbeddedResource Include="Mantenimiento\reportController.rdlc" />
     <EmbeddedResource Include="Mantenimiento\Reportes\Report1.rdlc" />
   </ItemGroup>
   <PropertyGroup>

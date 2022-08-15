@@ -55,28 +55,41 @@ namespace WebApp1.Mantenimiento
 
         private void guardar()
         {
-            try
+            bool existente = logUser.verificacion(txtCedula.Text, txtCalve.Text);
+
+            if (existente)
             {
-                lblMensaje.Text = "Registro de Usuarios";
-                us = new tblUsuario();
-
-                us.usNombre = txtNombre.Text;
-                us.usApellido = txtApellido.Text;
-                us.usCedula = txtCedula.Text;
-                us.usClave = txtCalve.Text;
-                us.usCorreo= txtCorreo.Text;
-                us.usDireccion = txtDireccion.Text;
-                us.idTipUsu = Convert.ToInt32(ddlRol.SelectedValue);
-
-                logUser.save(us);
-                lblMensaje.Text = "";
-                lblMensaje.Text = "Datos Guardados exitosamente";
-                limpiar();
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
+                lblMensaje.Text = "Usuario Existente";
             }
-            catch (Exception)
+            else
             {
 
-                throw;
+
+                try
+                {
+                    lblMensaje.Text = "Registro de Usuarios";
+                    us = new tblUsuario();
+
+                    us.usNombre = txtNombre.Text;
+                    us.usApellido = txtApellido.Text;
+                    us.usCedula = txtCedula.Text;
+                    us.usClave = txtCalve.Text;
+                    us.usCorreo = txtCorreo.Text;
+                    us.usDireccion = txtDireccion.Text;
+                    us.idTipUsu = Convert.ToInt32(ddlRol.SelectedValue);
+
+                    logUser.save(us);
+                    lblMensaje.Text = "";
+                    lblMensaje.ForeColor = System.Drawing.Color.Green;
+                    lblMensaje.Text = "Datos Guardados exitosamente";
+                    limpiar();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
             }
         }
 
@@ -96,13 +109,13 @@ namespace WebApp1.Mantenimiento
                 
 
                 logUser.edit(use);
-
+                lblMensaje.ForeColor = System.Drawing.Color.Green;
                 lblMensaje.Text = "Datos modificados";
                 limpiar();
             }
             catch (Exception ex)
             {
-
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
                 lblMensaje.Text = "Datos NO modificados"+ex;
             }
         }
