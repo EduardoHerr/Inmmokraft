@@ -29,9 +29,11 @@ namespace CapaNegocio
                 smtp.Port = 587;
                 smtp.Credentials = new NetworkCredential(from, contra);
                 smtp.EnableSsl = true;
+                
                 smtp.Send(m);
                 m.IsBodyHtml = true;
 
+                
                 return true;
 
             }

@@ -52,7 +52,8 @@ namespace WebApp1.Mantenimiento
 
         protected void lnkSalir_Click(object sender, EventArgs e)
         {
-            Session["nombre"] = null;
+            
+            Session.Clear();
             Response.Redirect("~/Loggin.aspx");
 
         }

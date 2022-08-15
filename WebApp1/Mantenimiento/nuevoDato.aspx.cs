@@ -152,6 +152,14 @@ namespace WebApp1.Mantenimiento
                             dat.idUsuario = key;
 
                         }
+                        else
+                        {
+                            if (Session["idAdmin"]!=null)
+                            {
+                                int keya = Convert.ToInt32(Session["idAdmin"]);
+                                dat.idUsuario = keya;
+                            }
+                        }
                         dat.datPerfil = txtPerfil.Text.Trim();
                         dat.datPropiedad = txtPropiedad.Text.ToLower().Trim();
                         dat.datTipo = txtTipo.Text.Trim();

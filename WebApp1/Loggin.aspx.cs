@@ -48,6 +48,8 @@ namespace WebApp1
 
                             if (tuser == 1)
                             {
+                                string admin = us.idUsuario.ToString();
+                                Session["idAdmin"] = admin;
                                 Session["rol"] = "1";
                                 Session["nombre"] = nombre;
                                 Response.Redirect("~/inicioAdmin.aspx");

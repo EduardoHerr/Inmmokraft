@@ -26,7 +26,7 @@
 
                 <center>
                     <div style="height: auto;">
-                        <rsweb:ReportViewer ID="ReportViewer1" runat="server" ShowExportControls="True" ShowBackButton="False" ShowFindControls="False" ShowPageNavigationControls="False" Height="1004px" Width="800px">
+                        <rsweb:ReportViewer  ID="ReportViewer1" runat="server" ShowExportControls="True" ShowBackButton="False" ShowFindControls="False" ShowPageNavigationControls="False" Height="1004px" Width="800px">
                             <LocalReport ReportPath="Mantenimiento\ReporteDatos.rdlc">
                             </LocalReport>
                         </rsweb:ReportViewer>

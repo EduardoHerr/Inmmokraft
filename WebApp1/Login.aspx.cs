@@ -44,7 +44,7 @@ namespace WebApp1
 
 
                         user = logUser.inforci(txtUsuario.Text);
-                        string from = "consorcioinmmokraft_2022@outlook.com";
+                        string from = "consorcioinmmokraft.2022@outlook.com";
                         string contra = "Inmmokraft2022";
                         string to = user.usCorreo;
                         //string msj = "Su contraseña olvidada es: " + user.usClave;
