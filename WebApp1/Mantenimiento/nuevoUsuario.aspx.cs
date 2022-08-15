@@ -55,7 +55,7 @@ namespace WebApp1.Mantenimiento
 
         private void guardar()
         {
-            bool existente = logUser.verificacion(txtCedula.Text, txtCalve.Text);
+            bool existente = logUser.verificacion(txtCedula.Text);
 
             if (existente)
             {

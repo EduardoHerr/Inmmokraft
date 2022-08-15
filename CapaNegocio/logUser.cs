@@ -19,9 +19,9 @@ namespace CapaNegocio
             return auto;
         }
 
-        public static bool verificacion(string cedula, string clave)
+        public static bool verificacion(string cedula)
         {
-            var bol = db.tblUsuario.Any(x => x.usCedula == cedula & x.usClave == clave);
+            var bol = db.tblUsuario.Any(x => x.usCedula == cedula );
             return bol;
         }
 
