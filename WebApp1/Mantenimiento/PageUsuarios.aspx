@@ -23,7 +23,7 @@
                     
                    <asp:TemplateField HeaderText="Rol">
                        <ItemTemplate>
-                           <asp:Label ID="lblTipoUser" runat="server" Text='<%#Eval("idTipUsu")%>'></asp:Label>
+                           <asp:Label ID="lblTipoUser" runat="server" Text='<%#Eval("tusuRol")%>'></asp:Label>
                        </ItemTemplate>
                    </asp:TemplateField>
 

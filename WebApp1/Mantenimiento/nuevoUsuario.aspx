@@ -2,6 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" type="text/css" href="css/registroUser.css" />
     <div class="padre">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        
     <form class="row g-3">
         <center>
         <div class="col-md-12">
@@ -19,8 +21,15 @@
         
         <!---->
         <div class="col-md-11">
+            <div class="row">
+                <div class="col">
             <label class="form-label">Cedula</label>
-            <asp:TextBox ID="txtCedula" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                <div class="col">
+                    <asp:Label ID="lblCedula" runat="server" Text=""></asp:Label>
+                </div>
+                </div>
+            <asp:TextBox ID="txtCedula" runat="server" CssClass="form-control" OnTextChanged="txtCedula_TextChanged" AutoPostBack="true"></asp:TextBox>
         </div>
         <div class="col-md-11">
             <label class="form-label">Clave</label>
@@ -29,8 +38,15 @@
 
         <!---->
         <div class="col-md-11">
+            <div class="row">
+                <div class="col">
             <label class="form-label">Correo</label>
-            <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                <div class="col">
+                    <asp:Label ID="lblCorreo" runat="server" Text=""></asp:Label>
+                </div>
+                </div>
+            <asp:TextBox ID="txtCorreo" runat="server" TextMode="Email" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtCorreo_TextChanged"></asp:TextBox>
         </div>
         <div class="col-md-11">
             <label class="form-label">Direccion</label>
@@ -49,5 +65,6 @@
             </center>
         </div>
     </form>
+                
     </div>
 </asp:Content>

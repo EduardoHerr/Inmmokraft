@@ -25,7 +25,7 @@ namespace WebApp1.Mantenimiento
             List<tblDatos> dat = new List<tblDatos>();
             dat = logDatos.listarDatos();
             SqlConnection cn = new SqlConnection("Data Source=Inmmokraft.mssql.somee.com;Initial Catalog=Inmmokraft;Persist Security Info=True;User ID=Barbas_SQLLogin_1;Password=xhuilpj8aq");
-            SqlCommand cmd = new SqlCommand("select * from tbldatos inner join tblPagina on tblDatos.idPagina=tblPagina.idPagina inner join tblUsuario on tblDatos.idUsuario = tblUsuario.idUsuario", cn);
+            SqlCommand cmd = new SqlCommand("select * from tbldatos inner join tblPagina on tblDatos.idPagina=tblPagina.idPagina inner join tblUsuario on tblDatos.idUsuario = tblUsuario.idUsuario inner join tblTipoUsuario on tblUsuario.idTipUsu=tblTipoUsuario.idTipUsu", cn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             sda.Fill(ds);

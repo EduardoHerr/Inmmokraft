@@ -137,8 +137,13 @@
 
                 </div>
                 <div class="columna">
+                    
                     <div class="2columna">
+                        <div style="text-align:left">
+                        <asp:LinkButton ID="lnkRegresar" runat="server" OnClick="lnkRegresar_Click" CssClass="btn btn-primary">Regresar</asp:LinkButton>
+                    </div>
                         <br />
+                        
                         <center>
                             <h1 class="titulo">Recuperar Clave</h1>
                         </center>

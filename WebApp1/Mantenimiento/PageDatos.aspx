@@ -7,6 +7,11 @@
     <br />
     <asp:GridView ID="gdvDatos" AutoGenerateColumns="false" OnRowCommand="gdvDatos_RowCommand" runat="server" CssClass="table table-dark table-hover">
         <Columns>
+            <asp:TemplateField HeaderText="Rol">
+                <ItemTemplate>
+                    <asp:Label ID="lblRol" runat="server" Text='<%#Eval("tusuRol") %>'></asp:Label>    
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:TemplateField HeaderText="Usuario">
                 <ItemTemplate>
                     <asp:Label ID="lblUsuario" runat="server" Text='<%#Eval("usNombre") %>'></asp:Label>    
@@ -48,11 +53,7 @@
                     <asp:Label ID="lblSitio" runat="server" Text='<%#Eval("datSitio") %>'></asp:Label>    
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Posts">
-                <ItemTemplate>
-                    <asp:Label ID="lblGrupoPost" runat="server" Text='<%#Eval("datGrupoPost") %>'></asp:Label>    
-                </ItemTemplate>
-            </asp:TemplateField>
+            
             <asp:TemplateField HeaderText="Acciones">
                 <ItemTemplate>
                     <asp:LinkButton ID="lnkEditar" runat="server" CommandArgument='<%#Eval("idDato")%>' CommandName="Editar" CssClass="btn btn-outline-warning" >Editar</asp:LinkButton>
